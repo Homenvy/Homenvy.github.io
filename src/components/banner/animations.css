@@ -1,0 +1,494 @@
+﻿/* This is for the site animations, this should cover most if not all animations*/
+
+/*Islands for Index Banner*/
+@keyframes islandSealedFloat {
+    0% {
+        left: 265px;
+        bottom: 200px;
+    }
+    4% {
+        left: 266px;
+        bottom: 199px;
+    }
+    8% {
+        left: 267px;
+        bottom: 198px;
+    }
+    12% {
+        left: 268px;
+        bottom: 197px;
+    }
+    16% {
+        left: 269px;
+        bottom: 195px;
+    }
+    20% {
+        left: 270px;
+        bottom: 193px;
+    }
+    24% {
+        left: 271px;
+        bottom: 191px;
+    }
+    28% {
+        left: 271px;
+        bottom: 188px;
+    }
+    32% {
+        left: 270px;
+        bottom: 185px;
+    }
+    36% {
+        left: 269px;
+        bottom: 183px;
+    }
+    40% {
+        left: 268px;
+        bottom: 181px;
+    }
+    44% {
+        left: 267px;
+        bottom: 179px;
+    }
+    48% {
+        left: 266px;
+        bottom: 178px;
+    }
+    52% {
+        left: 265px;
+        bottom: 177px;
+    }
+    56% {
+        left: 265px;
+        bottom: 177px;
+    }
+    60% {
+        left: 266px;
+        bottom: 178px;
+    }
+    64% {
+        left: 267px;
+        bottom: 180px;
+    }
+    68% {
+        left: 268px;
+        bottom: 182px;
+    }
+    72% {
+        left: 269px;
+        bottom: 185px;
+    }
+    76% {
+        left: 270px;
+        bottom: 188px;
+    }
+    80% {
+        left: 270px;
+        bottom: 191px;
+    }
+    84% {
+        left: 269px;
+        bottom: 194px;
+    }
+    88% {
+        left: 268px;
+        bottom: 196px;
+    }
+    92% {
+        left: 267px;
+        bottom: 198px;
+    }
+    96% {
+        left: 266px;
+        bottom: 199px;
+    }
+    100% {
+        left: 265px;
+        bottom: 200px;
+    }
+  }
+
+@keyframes islandEnhasaFloat {
+    0% {
+        right: -50px;
+        bottom: 0px;
+    }
+    4% {
+        right: -51px;
+        bottom: 0px;
+    }
+    8% {
+        right: -51px;
+        bottom: -1px;
+    }
+    12% {
+        right: -51px;
+        bottom: -2px;
+    }
+    16% {
+        right: -52px;
+        bottom: -2px;
+    }
+    20% {
+        right: -52px;
+        bottom: -2px;
+    }
+    24% {
+        right: -51px;
+        bottom: -2px;
+    }
+    28% {
+        right: -50px;
+        bottom: -1px;
+    }
+    32% {
+        right: -49px;
+        bottom: 0px;
+    }
+    36% {
+        right: -48px;
+        bottom: 0px;
+    }
+    40% {
+        right: -46px;
+        bottom: 1px;
+    }
+    44% {
+        right: -44px;
+        bottom: 3px;
+    }
+    48% {
+        right: -41px;
+        bottom: 5px;
+    }
+    52% {
+        right: -39px;
+        bottom: 7px;
+    }
+    56% {
+        right: -37px;
+        bottom: 8px;
+    }
+    60% {
+        right: -36px;
+        bottom: 8px;
+    }
+    64% {
+        right: -35px;
+        bottom: 8px;
+    }
+    68% {
+        right: -35px;
+        bottom: 7px;
+    }
+    72% {
+        right: -36px;
+        bottom: 6px;
+    }
+    76% {
+        right: -37px;
+        bottom: 5px;
+    }
+    80% {
+        right: -39px;
+        bottom: 4px;
+    }
+    84% {
+        right: -42px;
+        bottom: 3px;
+    }
+    88% {
+        right: -45px;
+        bottom: 2px;
+    }
+    92% {
+        right: -47px;
+        bottom: 1px;
+    }
+    96% {
+        right: -48px;
+        bottom: 0px;
+    }
+    100% {
+        right: -49px;
+        bottom: 0px;
+    }
+  }
+
+@keyframes islandSunFloat {
+    0% {
+        left: -60px;
+        bottom: 50px;
+    }
+    4% {
+        left: -59px;
+        bottom: 51px;
+    }
+    8% {
+        left: -58px;
+        bottom: 52px;
+    }
+    12% {
+        left: -57px;
+        bottom: 53px;
+    }
+    16% {
+        left: -56px;
+        bottom: 54px;
+    }
+    20% {
+        left: -55px;
+        bottom: 55px;
+    }
+    24% {
+        left: -54px;
+        bottom: 57px;
+    }
+    28% {
+        left: -54px;
+        bottom: 59px;
+    }
+    32% {
+        left: -55px;
+        bottom: 61px;
+    }
+    36% {
+        left: -56px;
+        bottom: 64px;
+    }
+    40% {
+        left: -57px;
+        bottom: 67px;
+    }
+    44% {
+        left: -58px;
+        bottom: 69px;
+    }
+    48% {
+        left: -59px;
+        bottom: 71px;
+    }
+    52% {
+        left: -60px;
+        bottom: 72px;
+    }
+    56% {
+        left: -60px;
+        bottom: 73px;
+    }
+    60% {
+        left: -61px;
+        bottom: 73px;
+    }
+    64% {
+        left: -62px;
+        bottom: 72px;
+    }
+    68% {
+        left: -63px;
+        bottom: 70px;
+    }
+    72% {
+        left: -64px;
+        bottom: 68px;
+    }
+    76% {
+        left: -65px;
+        bottom: 65px;
+    }
+    80% {
+        left: -65px;
+        bottom: 61px;
+    }
+    84% {
+        left: -64px;
+        bottom: 58px;
+    }
+    88% {
+        left: -63px;
+        bottom: 55px;
+    }
+    92% {
+        left: -62px;
+        bottom: 53px;
+    }
+    96% {
+        left: -61px;
+        bottom: 51px;
+    }
+    100% {
+        left: -60px;
+        bottom: 50px;
+    }
+  }
+
+@keyframes islandPalaceFloat {
+    0% {
+        bottom: 0px;
+    }
+    4% {
+        bottom: -2px;
+    }
+    8% {
+        bottom: -3px;
+    }
+    12% {
+        bottom: -4px;
+    }
+    16% {
+        bottom: -5px;
+    }
+    20% {
+        bottom: -6px;
+    }
+    24% {
+        bottom: -7px;
+    }
+    28% {
+        bottom: -7px;
+    }
+    32% {
+        bottom: -6px;
+    }
+    36% {
+        bottom: -5px;
+    }
+    40% {
+        bottom: -4px;
+    }
+    44% {
+        bottom: -2px;
+    }
+    48% {
+        bottom: 0px;
+    }
+    52% {
+        bottom: 3px;
+    }
+    56% {
+        bottom: 6px;
+    }
+    60% {
+        bottom: 9px;
+    }
+    64% {
+        bottom: 11px;
+    }
+    68% {
+        bottom: 13px;
+    }
+    72% {
+        bottom: 14px;
+    }
+    76% {
+        bottom: 14px;
+    }
+    80% {
+        bottom: 13px;
+    }
+    84% {
+        bottom: 12px;
+    }
+    88% {
+        bottom: 10px;
+    }
+    92% {
+        bottom: 7px;
+    }
+    96% {
+        bottom: 4px;
+    }
+    100% {
+        bottom: 2px;
+    }
+  }
+
+@keyframes islandPlaneFloat {
+    0% {
+        bottom: 210px;
+    }
+    4% {
+        bottom: 208px;
+    }
+    8% {
+        bottom: 207px;
+    }
+    12% {
+        bottom: 206px;
+    }
+    16% {
+        bottom: 205px;
+    }
+    20% {
+        bottom: 204px;
+    }
+    24% {
+        bottom: 203px;
+    }
+    28% {
+        bottom: 203px;
+    }
+    32% {
+        bottom: 204px;
+    }
+    36% {
+        bottom: 205px;
+    }
+    40% {
+        bottom: 206px;
+    }
+    44% {
+        bottom: 208px;
+    }
+    48% {
+        bottom: 210px;
+    }
+    52% {
+        bottom: 213px;
+    }
+    56% {
+        bottom: 216px;
+    }
+    60% {
+        bottom: 219px;
+    }
+    64% {
+        bottom: 221px;
+    }
+    68% {
+        bottom: 223px;
+    }
+    72% {
+        bottom: 224px;
+    }
+    76% {
+        bottom: 224px;
+    }
+    80% {
+        bottom: 223px;
+    }
+    84% {
+        bottom: 222px;
+    }
+    88% {
+        bottom: 220px;
+    }
+    92% {
+        bottom: 217px;
+    }
+    96% {
+        bottom: 214px;
+    }
+    100% {
+        bottom: 212px;
+    }
+  }
+
+@keyframes passingClouds {
+    0% {
+        left: 0px;
+    }
+    100% {
+        left: 64px;
+    }
+}
