@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.549caa23.css",
+    "main.js": "/static/js/main.c414eda4.js",
+    "static/media/PalaceZeal.png": "/static/media/PalaceZeal.aac1433da62cd9ac9b17.png",
+    "index.html": "/index.html",
+    "main.549caa23.css.map": "/static/css/main.549caa23.css.map",
+    "main.c414eda4.js.map": "/static/js/main.c414eda4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.549caa23.css",
+    "static/js/main.c414eda4.js"
+  ]
+}
