@@ -25,7 +25,7 @@ class Banner extends Component {
                 
                 <div className="contentContainer">
                     <div className="island">
-                        <img src="./img/banner/sunShrineZeal.png" id="sunShrine" alt="Sun Shrine"/>
+                        <img src="./img/banner/SunShrineZeal.png" id="sunShrine" alt="Sun Shrine"/>
                         <div id="blackBird">
                             {/*onClick()="planeLaunch()" */}
                         </div>
