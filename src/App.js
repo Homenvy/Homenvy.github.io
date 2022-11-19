@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import NavBar from "./components/navbar";  //todo: Transform this into 2 navigational panes: PC use and Mobile use.
 import Counters from "./components/counters"; //todo: set this aside for later use
-import Banner from "./components/banner/banner"; //todo: bring banner over from MVC4 Project
+import Banner from "./components/banner/banner"; 
 
 class App extends Component {
   state = {
@@ -51,20 +51,27 @@ class App extends Component {
   };
 
   render() {
-    console.log("App - Rendered");
 
     return (
       <><React.Fragment>
         <NavBar
           totalCounters={this.state.counters.filter((c) => c.value > 0).length} />
-        <main className="container">
+        {/* <main className="container">
           <Counters
             counters={this.state.counters}
             onReset={this.handleReset}
             onIncrement={this.handleIncrement}
             onDelete={this.handleDelete} />
-        </main>
-      </React.Fragment><Banner /></>
+        </main> */}
+        <Banner />
+      </React.Fragment>
+      <p>Welcome to Project Zeal. This is currently a work in progress but
+      I will be adding things I make here. I will make this a presentable site
+      that I can use to refer traffic to me for services. This site will be constantly 
+      updated when I am able to. Maybe I will add in a changelog at some point when 
+      it is the right time. 
+    </p></>
+      
     );
   }
 }

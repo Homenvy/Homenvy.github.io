@@ -1115,6 +1115,93 @@ aside {
     margin: 5px 0 0 10px;
 }
 
+  /* TOGGLE Switch*/
+  
+  .radar-toggle {
+    display: flex;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    /* width: 48px; This makes the switch go from flat to a switch*/
+    height: 36px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: skyblue;
+    background-image: transparent;
+    -webkit-transition: background-color 0.4s, background-image 0.4s;
+    -ms-transition: background-color 0.4s, background-image 0.4s;
+    transition: background-color 0.4s, background-image 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: #333;
+
+    -webkit-transition: background-color 0.4s, background-image 0.4s;
+    -ms-transition: background-color 0.4s, background-image 0.4s;
+    transition: background-color 0.4s, background-image 0.4s;
+    background-image: url(../public/img/banner/BannerNight.gif);
+    background-size: 75%;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 5px;
+    top: 6px;
+    background-color: transparent;
+    filter: drop-shadow(0 0 5px lightyellow);
+    box-shadow: inset 8px -8px 0 12px yellow;
+
+    -webkit-transition: transform 0.4s, box-shadow 0.3s linear;
+    -ms-transition: transform 0.4s, box-shadow 0.3s linear;
+    transition: transform 0.4s, box-shadow 0.3s linear;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+
+    background-color: transparent;
+    filter: drop-shadow(0 0 5px lightyellow);
+    box-shadow: inset 3px -3px 0 3px #ffc;
+
+    -webkit-transition: transform .4s, box-shadow 0.3s linear;
+    -ms-transition: transform .4s, box-shadow 0.3s linear;
+    transition: transform .4s, box-shadow 0.3s linear;
+  }
+  
+  input:focus + .slider {
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 30px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
 /* forms */
 fieldset {
     border: none;

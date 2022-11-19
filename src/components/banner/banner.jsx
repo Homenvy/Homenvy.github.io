@@ -7,8 +7,6 @@ class Banner extends Component {
         console.log("Banner Rendered");
         const timeOfDay = this.lightOfDay();
         const lightSource = this.findLightSource(timeOfDay);
-        console.log(lightSource);
-
         return (
             <div className="relCanvas" style={{backgroundColor: 'blue'}}>
                 <div className={timeOfDay}>
@@ -26,8 +24,10 @@ class Banner extends Component {
                 <div className="contentContainer">
                     <div className="island">
                         <img src="./img/banner/SunShrineZeal.png" id="sunShrine" alt="Sun Shrine"/>
-                        <div id="blackBird">
-                            {/*onClick()="planeLaunch()" */}
+                        <div
+                            id="blackBird"
+                            >
+                            {/*onClick={this.planeLaunch} */}
                         </div>
                         <img src="./img/banner/PalaceZeal.png" id="zealPalace" alt="Zeal Palace"/>
                         <img src="./img/banner/NuuStructureZeal.png" id="nuuStruct" alt="Sealed Structure" />
@@ -73,7 +73,7 @@ class Banner extends Component {
         return source;
     }
 
-    planeLaunch() {
+    static planeLaunch() {
         return console.log("this happened");
         
     }
