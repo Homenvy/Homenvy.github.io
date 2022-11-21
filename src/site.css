@@ -924,11 +924,87 @@ ul#menu2 {
         top: 10%;
         filter: drop-shadow(0 0 10px lightyellow);
     }
-/*------------------------Social Media------------------*/
+/*------------------------Utility Icons-----------------*/
+
+.loggedIn {
+    width: 48px;
+    height: 48px;
+    text-decoration: none;
+    filter: drop-shadow(0 5px 4px green);
+    background-image: url("../public/img/SignedIn.png");
+    background-color: transparent;
+}
+
+.guestMode {
+    width: 48px;
+    height: 48px;
+    text-decoration: none;
+    filter: drop-shadow(0 5px 4px yellow);
+    background-image: url("../public/img/Guest.png");
+    background-color: transparent;
+}
+
+/*------------------------Social Media------------------343a40*/
 
 .sMedia {
-    padding: 0 10px;
-    margin: -10px 0 0 0;
+    padding: 5px 10px 0 10px;
+    margin: -5px 0 -5px 0;
+}
+
+.iContainer {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+}
+
+#discord-light {
+    background-image: url("../public/img/sm/Discord-light.png");
+    background-color: white;
+}
+
+#discord-dark {
+    background-image: url("../public/img/sm/Discord-dark.png");
+    background-color: #343a40;
+}
+
+#github-light {
+    background-image: url("../public/img/sm/Github-light.png");
+    background-color: white;
+}
+
+#github-dark {
+    background-image: url("../public/img/sm/Github-dark.png");
+    background-color: #343a40;
+}
+
+#linkedIn-light {
+    background-image: url("../public/img/sm/LinkedIn-light.png");
+    background-color: white;
+}
+
+#linkedIn-dark {
+    background-image: url("../public/img/sm/LinkedIn-dark.png");
+    background-color: #343a40;
+}
+
+#youtube-light {
+    background-image: url("../public/img/sm/Youtube-light.png");
+    background-color: white;
+}
+
+#youtube-dark {
+    background-image: url("../public/img/sm/Youtube-dark.png");
+    background-color: #343a40;
+}
+
+#socialMediaButton-light {
+    background-image: url("../public/img/sm/SocialMedia-light.png");
+    background-color: white;
+}
+
+#socialMediaButton-dark {
+    background-image: url("../public/img/sm/SocialMedia-dark.png");
+    background-color: #343a40;
 }
 
 #twitterBird {
@@ -1126,6 +1202,7 @@ aside {
     display: inline-block;
     /* width: 48px; This makes the switch go from flat to a switch*/
     height: 36px;
+    top: 5px;
   }
   
   /* Hide default HTML checkbox */
