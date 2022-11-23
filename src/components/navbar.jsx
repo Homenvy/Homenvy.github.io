@@ -17,8 +17,8 @@ class NavBar extends Component {
       <nav className={(classStyle + this.props.themeState)}>
         <div className="container-fluid">
 
-          <a className="navbar-brand" href="#">
-            Logo Here{" "}
+          <a className="navbar-brand pZealNavIco" href="#">
+          <img src="./img/NavLogo2.png" alt="Project Zeal"/>{" "}
             <span className="badge badge-pill badge-secondary">
               
             </span>

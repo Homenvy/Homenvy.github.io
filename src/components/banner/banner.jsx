@@ -16,7 +16,7 @@ class Banner extends Component {
                     <div id={lightSource}></div>   
                 </div>
                 <div className="contentContainer">
-                    <div id="logo">
+                    <div id="bannerLogo">
                         {/*TODO: add in logo text and format it*/}
                     </div>
                 </div>
@@ -69,7 +69,6 @@ class Banner extends Component {
         if (dayState === "night" || dayState === "dawn") {
             source = "moon";
         }
-        console.log(dayState);
         return source;
     }
 
