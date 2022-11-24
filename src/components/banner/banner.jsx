@@ -17,7 +17,7 @@ class Banner extends Component {
                 </div>
                 <div className="contentContainer">
                     <div id="bannerLogo">
-                        {/*TODO: add in logo text and format it*/}
+                        
                     </div>
                 </div>
                 

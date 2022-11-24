@@ -3,32 +3,33 @@ import Socials from "./socials";
 import AccountInteraction from "./accountInteraction";
 import { Outlet, Link } from "react-router-dom";
 
+
 class NavBar extends Component {
 // Stateless Functional Component (shortcut sfc)
 // totalCounters not used, was used previously for shopping cart.
 // const NavBar = ({ totalCounters }) => {
   
-  render() {
+  render(props) {
     console.log("NavBar - Rendered");
-    let themeState = this.props.themeState;
-    const classStyle = "navbar bg-";
+
 
     return (
-      <nav className={(classStyle + this.props.themeState)}>
+      
         <div className="container-fluid">
 
-          <a className="navbar-brand pZealNavIco" href="#">
+          <Link to="/" className="navbar-brand pZealNavIco">
           <img src="./img/NavLogo2.png" alt="Project Zeal"/>{" "}
             <span className="badge badge-pill badge-secondary">
               
             </span>
-          </a>
+          </Link>
 
           <div>
             {/* TODO: Navigation to other pages */}
-            {/* <ul>
+          
+            <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/aboutme">About Me</Link>
               </li>
               <li>
                 <Link to="/portfolio">Portfolio</Link>
@@ -37,8 +38,6 @@ class NavBar extends Component {
                 <Link to="/contact">Contact</Link>
               </li>
             </ul>
-
-            <Outlet /> */}
           </div>
 
           <div>
@@ -46,7 +45,7 @@ class NavBar extends Component {
               <label className="switch">
                 <input
                   type="checkbox"
-                  onClick={() => this.themeChange(this.props.themeState)} //TODO: get themechange to work and render page
+                  onClick={() => this.themeChange()} //TODO: get themechange to work and render page
                 />
                 <span className="slider round"></span>
               </label>
@@ -64,18 +63,18 @@ class NavBar extends Component {
             <AccountInteraction></AccountInteraction>
           </div>
         </div>
-      </nav>
-    );
-  }
+    )
+  };
 
-  themeChange(theme) {
-    console.log("this happened. " + theme);
+  themeChange() {
+    const theme = this.theme;
+    console.log("this happened. " + this.theme);
     if (theme === "light"){
-      this.themeState = "dark";
+      //this.setTheme("dark"); TODO: learn how to pass variables to here... key variables
     } else {
-      this.themeState = "light";
+      //this.setTheme("light");
     }
-    console.log("pass through: " + this.themeState)
+    console.log("pass through: " + this.theme)
     this.render();
   }
 };

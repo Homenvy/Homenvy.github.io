@@ -1,23 +1,21 @@
-import { Outlet, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { ReactDOM } from "react-dom/client";
 
-const Layout = () => {
+import { Outlet, Link } from "react-router-dom";
+import NavBar from "../components/navbar";
+
+const Layout = (props) => {
+  const [theme, setTheme] = useState(props.theme);
+  let themeState = props.theme;
+  console.log(themeState);
+  const classStyle = "navbar bg-";
+
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/portfolio">Portfolio</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
+      <nav className={(classStyle + themeState)}>
+        <NavBar theme={props}/>
       </nav>
-
-      <Outlet />
+        <Outlet />
     </>
   )
 };

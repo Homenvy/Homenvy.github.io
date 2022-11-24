@@ -1,13 +1,14 @@
-import React, { Component } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { Component, useState } from "react";
+import { ReactDOM } from "react-dom/client";
+
 import "./App.css";
-import NavBar from "./components/navbar";  //todo: Transform this into 2 navigational panes: PC use and Mobile use.
-import Counters from "./components/counters"; //todo: set this aside for later use
-import Banner from "./components/banner/banner";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
+import AboutMe from "./pages/AboutMe";
 
 class App extends Component {
   state = {
@@ -17,7 +18,7 @@ class App extends Component {
       { id: 3, value: 0 },
       { id: 4, value: 0 },
     ],
-    themeState: "light",
+    themeState: "dark",
   };
 
   //only called once and used to initiate properties of App
@@ -62,18 +63,19 @@ class App extends Component {
       <>
       
       <React.Fragment>
-        {/* <BrowserRouter>
+        <BrowserRouter>
           <Routes>
-              <Route path="/" element={<App />}>
+              <Route path="/" element={<Layout theme={this.themeState}/>}>
                   <Route index element={<Home />} />
                   <Route path="portfolio" element={<Portfolio />}/>
                   <Route path="contact" element={<Contact />}/>
+                  <Route path="aboutme" element={<AboutMe />}/>
                   <Route path="*" element={<NoPage />} />
               </Route>
           </Routes>
-        </BrowserRouter> */}
-        <NavBar
-          totalCounters={this.state.counters.filter((c) => c.value > 0).length} stateTheme={this.state.stateTheme} />
+        </BrowserRouter>
+        {/* <NavBar
+          totalCounters={this.state.counters.filter((c) => c.value > 0).length} stateTheme={this.state.stateTheme} /> */}
         {/* <main className="container">
           <Counters
             counters={this.state.counters}
@@ -81,7 +83,6 @@ class App extends Component {
             onIncrement={this.handleIncrement}
             onDelete={this.handleDelete} />
         </main> */}
-        <Banner />
       </React.Fragment>
       <p>Welcome to Project Zeal. Be hyped for what's to come.
     </p></>
