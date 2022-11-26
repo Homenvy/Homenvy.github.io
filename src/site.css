@@ -209,6 +209,10 @@ a.categoryButton {
 
 /* main layout
 ----------------------------------------------------------*/
+ul.noBullet {
+    list-style-type: none;
+}
+
 .content-wrapper {
     margin: 0 auto;
     max-width: 90%;
@@ -1068,7 +1072,7 @@ ul#menu2 {
         background-color: #7ac0da;
         background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
+        background-image: -webkit-linear-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
         background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         color: #3e5667;
@@ -1273,8 +1277,8 @@ aside {
     transition: transform .4s, box-shadow 0.3s linear;
   }
   
-  input:focus + .slider {
-  }
+  /* input:focus + .slider {
+  } */
   
   /* Rounded sliders */
   .slider.round {

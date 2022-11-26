@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Socials from "./socials";
 import AccountInteraction from "./accountInteraction";
 import { Outlet, Link } from "react-router-dom";
@@ -9,12 +9,13 @@ class NavBar extends Component {
 // totalCounters not used, was used previously for shopping cart.
 // const NavBar = ({ totalCounters }) => {
   
-  render(props) {
+  render() {
+    
     console.log("NavBar - Rendered");
-
-
+    const classStyle = "navbar bg-";
+    let theme = this.props.theme;
     return (
-      
+      <nav className={(classStyle + theme)}>
         <div className="container-fluid">
 
           <Link to="/" className="navbar-brand pZealNavIco">
@@ -26,18 +27,22 @@ class NavBar extends Component {
 
           <div>
             {/* TODO: Navigation to other pages */}
-          
-            <ul>
-              <li>
-                <Link to="/aboutme">About Me</Link>
-              </li>
-              <li>
-                <Link to="/portfolio">Portfolio</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
-            </ul>
+            <div>
+              <ul className="noBullet">
+                <li>
+                  <Link to="/aboutme">About Me</Link>
+                </li>
+                <li>
+                  <Link to="/portfolio">Portfolio</Link>
+                </li>
+                <li>
+                  <Link to="/contact">Contact</Link>
+                </li>
+                <li>
+                  <Link to="/service">Service</Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div>
@@ -45,7 +50,7 @@ class NavBar extends Component {
               <label className="switch">
                 <input
                   type="checkbox"
-                  onClick={() => this.themeChange()} //TODO: get themechange to work and render page
+                  onClick={() => this.props.themeUpdate()} //TODO: get themechange to work and render page
                 />
                 <span className="slider round"></span>
               </label>
@@ -63,20 +68,24 @@ class NavBar extends Component {
             <AccountInteraction></AccountInteraction>
           </div>
         </div>
+      </nav>
     )
   };
 
-  themeChange() {
-    const theme = this.theme;
-    console.log("this happened. " + this.theme);
-    if (theme === "light"){
-      //this.setTheme("dark"); TODO: learn how to pass variables to here... key variables
-    } else {
-      //this.setTheme("light");
-    }
-    console.log("pass through: " + this.theme)
-    this.render();
-  }
+  // themeChange() {
+  //   let theme = this.props.theme;
+  //   console.log("this happened. " + theme);
+  //   if (theme === "light"){
+  //     console.log("dark");
+  //     theme = "dark";
+  //   } else {
+  //     console.log("light");
+  //     theme = "light";
+  //   }
+  //   console.log("pass through: " + theme);
+  //   this.state.themeState = theme;
+  //   this.render();
+  // }
 };
 
 // use SFC over class in situations like the nav bar
