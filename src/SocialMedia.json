@@ -1,0 +1,29 @@
+{
+    "socialMedia" : [
+        {
+            "name": "discord",
+            "isEnabled": "1",
+            "url": "https://discord.gg/DhX5VwzD4y"
+        },
+        {
+            "name": "github",
+            "isEnabled": "1",
+            "url": "https://github.com/Homenvy"
+        },
+        {
+            "name": "linkedIn",
+            "isEnabled": "0",
+            "url": "https://www.linkedin.com/in/michael-ess-haghabodi-680170246/"
+        },
+        {
+            "name": "twitch",
+            "isEnabled": "1",
+            "url": "https://www.twitch.tv/homenvy"
+        },
+        {
+            "name": "youtube",
+            "isEnabled": "1",
+            "url": "https://www.youtube.com/channel/UCpo7rZFkjKUWkDqumItHL2Q"
+        }
+    ]
+}

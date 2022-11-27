@@ -6,25 +6,14 @@ import NavBar from "../components/navbar";
 
 const Layout = (props) => {
   const [theme, setTheme] = useState(props.theme);
-  
-  //const theme = props.theme;
-  //console.log(props.theme + " " + themeState); - correct information passed
 
   const themeType = () => {
-    console.log("this happened: " + theme);
-    // if (theme === "undefined") {
-    //   return setTheme({theme: "dark"});
-    // }
+    //TODO: Implement cookies to remember option
+    //TODO: By default theme should mirror state of day
     if (theme === "light"){
-      setTheme(previousState => {
-        return {...previousState, theme: "dark"}
-      });
-      console.log("dark/" + theme);
+      setTheme("dark");
     } else {
-      setTheme(previousState => { 
-        return {...previousState, theme: "light" }
-      });
-      console.log("light/" + theme);
+      setTheme("light");
     }
   }
 
@@ -35,7 +24,7 @@ const Layout = (props) => {
   return (
     <>
         <NavBar 
-          theme={theme.theme}
+          theme={theme}
           themeUpdate={themeType} />
         <Outlet />
     </>

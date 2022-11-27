@@ -211,6 +211,7 @@ a.categoryButton {
 ----------------------------------------------------------*/
 ul.noBullet {
     list-style-type: none;
+    padding-left: 0px;
 }
 
 .content-wrapper {
@@ -246,20 +247,6 @@ ul.noBullet {
     border-right: 6px solid #980505;
     padding: 0;
 }
-
-a.navLogo {
-    /*background-image: url("");*/
-    width: 123px;
-    height: 50px;
-    display: block;
-    margin: -20px 0;
-}
-
-    a.navLogo:hover {
-        opacity: .3;
-    }
-
-
 
 #scaryLink {
     text-align: center;
@@ -524,6 +511,312 @@ footer {
     background-color: #fff;
     font-size: .8em;
     height: 100px;
+}
+/* -----------------------------NAVIGATION---------------------------*/
+
+a.navLogo {
+    background-image: url("../public/img/NavLogo2.png");
+    width: 70px;
+    height: 60px;
+    margin: 0px 0;
+    filter: drop-shadow(0px 0px 10px white);
+    opacity: .7;
+
+    -webkit-transition: filter 0.4s, opacity 0.4s;
+    -ms-transition: filter 0.4s, opacity 0.4s;
+    transition: filter 0.4s, opacity 0.4s;
+}
+
+    a.navLogo:hover {
+        opacity: 1;
+        filter: drop-shadow(0px 0px 10px skyblue);
+
+    }
+
+.navLinkContainer {
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+}
+
+/*------------------------Social Media------------------*/
+
+.sMedia {
+    padding: 5px 10px 0 10px;
+    margin: -5px 0 -5px 0;
+}
+
+.iContainer {
+    position:absolute;
+    top: 15px;
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    padding-bottom: 62px;
+    background: no-repeat;
+}
+
+.iObjContainer {
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.iContainer:hover .iObjContainer {
+    opacity: 1;
+
+    -webkit-transition: opacity 1.5s;
+    -ms-transition: opacity 1.5s;
+    transition: opacity 1.5s;
+}
+
+#twitterBird {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    text-decoration: none;
+    background-image: url("../public/img/TwitIco.png");
+    background-color: transparent;
+}
+
+    #twitterBird:hover {
+        opacity: .5;
+        background-color: transparent;
+    }
+
+#InstaIco {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    text-decoration: none;
+    background-image: url("../public/img/InstaIco.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+    #InstaIco:hover {
+        opacity: .5;
+        background-color: transparent;
+    }
+
+#amazonWL {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    text-decoration: none;
+    background-image: url("../public/img/amazon.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+    #amazonWL:hover {
+        opacity: .5;
+        background-color: transparent;
+    }
+
+
+/* -------------------------------THEMES-----------------------------*/
+
+.socialObjContainer-dark, .socialObjContainer-light {
+    position: relative;
+    top: 60px;
+    right: 50px;
+    width: 150px;
+    height: 0px;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+
+    -webkit-transition: height 1s ease-out, opacity 1s;
+    -ms-transition: height 1s ease-out, opacity 1s;
+    transition: height 1s ease-out, opacity 1s;
+}
+
+/* THEME - Light */
+
+a.light {
+    -webkit-transition: color 0.4s;
+    -ms-transition: color 0.4s;
+    transition: color 0.4s;
+}
+
+.bg-light {
+    -webkit-transition: background-color 0.4s;
+    -ms-transition: background-color 0.4s;
+    transition: background-color 0.4s;
+}
+
+.socialObjContainer-light {
+    background-color: white;
+}
+
+.socialObjContainer-light:hover, .iContainer:hover .socialObjContainer-light {
+    background-color: white;
+    visibility: visible;
+    width: 150px;
+    height: 100px;
+    opacity: 1;
+    z-index: 5000;
+
+    -webkit-transition: background-color .4s, background-image 1s, height .5s ease-out;
+    -ms-transition: background-color .4s, background-image 1s, height .5s ease-out;
+    transition: background-color .4s, background-image 1s, height .5s ease-out;
+}
+
+#youtube-light {
+    background-image: url("../public/img/sm/Youtube-light.png");
+    background-color: white;
+    width:48px;
+    height:48px;
+    margin: 1px;
+
+    -webkit-transition: background-color 0.4s, background-image 0.4s;
+    -ms-transition: background-color 0.4s, background-image 0.4s;
+    transition: background-color 0.4s, background-image 0.4s;
+}
+
+#discord-light {
+    background-image: url("../public/img/sm/Discord-light.png");
+    background-color: white;
+    width:48px;
+    height:48px;
+    margin: 1px;
+
+    -webkit-transition: background-color 0.4s, background-image 0.4s;
+    -ms-transition: background-color 0.4s, background-image 0.4s;
+    transition: background-color 0.4s, background-image 0.4s;
+}
+
+#github-light {
+    background-image: url("../public/img/sm/Github-light.png");
+    background-color: white;
+    width:48px;
+    height:48px;
+    margin: 1px;
+
+    -webkit-transition: background-color 0.4s, background-image 0.4s;
+    -ms-transition: background-color 0.4s, background-image 0.4s;
+    transition: background-color 0.4s, background-image 0.4s;
+}
+
+#linkedIn-light {
+    background-image: url("../public/img/sm/LinkedIn-light.png");
+    background-color: white;
+    width:48px;
+    height:48px;
+    margin: 1px;
+
+    -webkit-transition: background-color 0.4s, background-image 0.4s;
+    -ms-transition: background-color 0.4s, background-image 0.4s;
+    transition: background-color 0.4s, background-image 0.4s;
+}
+
+#socialMediaButton-light {
+    background-image: url("../public/img/sm/SocialMedia-light.png");
+    background-color: white;
+
+    -webkit-transition: background-color 0.4s, background-image 0.4s;
+    -ms-transition: background-color 0.4s, background-image 0.4s;
+    transition: background-color 0.4s, background-image 0.4s;
+}
+
+/* THEME - Dark */
+
+
+.bg-dark {
+    /*this css is in bootstrap, add additional properties here
+    Bootstrap: background-color: #343a40 !important;
+    */
+    -webkit-transition: background-color 0.4s;
+    -ms-transition: background-color 0.4s;
+    transition: background-color 0.4s;
+}
+
+a.dark {
+    color: white;
+
+    -webkit-transition: color 0.4s;
+    -ms-transition: color 0.4s;
+    transition: color 0.4s;
+}
+
+.socialObjContainer-dark {
+    background-color: #343a40;
+}
+
+
+.socialObjContainer-dark:hover, .iContainer:hover .socialObjContainer-dark {
+    background-color: #343a40;
+    visibility: visible;
+    width: 150px;
+    height: 100px;
+    opacity: 1;
+    z-index: 5000;
+
+    -webkit-transition: background-color .4s, background-image 1s, height .5s ease-out;
+    -ms-transition: background-color .4s, background-image 1s, height .5s ease-out;
+    transition: background-color .4s, background-image 1s, height .5s ease-out;
+}
+
+#discord-dark {
+    background-image: url("../public/img/sm/Discord-dark.png");
+    background-color: #343a40;
+    width:48px;
+    height:48px;
+    margin: 1px;
+
+    -webkit-transition: background-color 0.4s, background-image 0.4s;
+    -ms-transition: background-color 0.4s, background-image 0.4s;
+    transition: background-color 0.4s, background-image 0.4s;
+}
+
+#github-dark {
+    background-image: url("../public/img/sm/Github-dark.png");
+    background-color: #343a40;
+    width:48px;
+    height:48px;
+    margin: 1px;
+
+    -webkit-transition: background-color 0.4s, background-image 0.4s;
+    -ms-transition: background-color 0.4s, background-image 0.4s;
+    transition: background-color 0.4s, background-image 0.4s;
+}
+
+#linkedIn-dark {
+    background-image: url("../public/img/sm/LinkedIn-dark.png");
+    background-color: #343a40;
+    width:48px;
+    height:48px;
+    margin: 1px;
+
+    -webkit-transition: background-color 0.4s, background-image 0.4s;
+    -ms-transition: background-color 0.4s, background-image 0.4s;
+    transition: background-color 0.4s, background-image 0.4s;
+}
+
+#youtube-dark {
+    background-image: url("../public/img/sm/Youtube-dark.png");
+    background-color: #343a40;
+    width:48px;
+    height:48px;
+    margin: 1px;
+
+    -webkit-transition: background-color 0.4s, background-image 0.4s;
+    -ms-transition: background-color 0.4s, background-image 0.4s;
+    transition: background-color 0.4s, background-image 0.4s;
+}
+
+#socialMediaButton-dark {
+    background-image: url("../public/img/sm/SocialMedia-dark.png");
+    background-color: #343a40;
+
+    -webkit-transition: background-color 0.4s, background-image 0.4s;
+    -ms-transition: background-color 0.4s, background-image 0.4s;
+    transition: background-color 0.4s, background-image 0.4s;
 }
 
 /* site title
@@ -950,116 +1243,6 @@ ul#menu2 {
     background-color: transparent;
 }
 
-.pZealNavIco {
-    filter: drop-shadow(0px 0px 3px white);
-}
-
-/*------------------------Social Media------------------*/
-
-.sMedia {
-    padding: 5px 10px 0 10px;
-    margin: -5px 0 -5px 0;
-}
-
-.iContainer {
-    display: inline-block;
-    width: 48px;
-    height: 48px;
-}
-
-#discord-light {
-    background-image: url("../public/img/sm/Discord-light.png");
-    background-color: white;
-}
-
-#discord-dark {
-    background-image: url("../public/img/sm/Discord-dark.png");
-    background-color: #343a40;
-}
-
-#github-light {
-    background-image: url("../public/img/sm/Github-light.png");
-    background-color: white;
-}
-
-#github-dark {
-    background-image: url("../public/img/sm/Github-dark.png");
-    background-color: #343a40;
-}
-
-#linkedIn-light {
-    background-image: url("../public/img/sm/LinkedIn-light.png");
-    background-color: white;
-}
-
-#linkedIn-dark {
-    background-image: url("../public/img/sm/LinkedIn-dark.png");
-    background-color: #343a40;
-}
-
-#youtube-light {
-    background-image: url("../public/img/sm/Youtube-light.png");
-    background-color: white;
-}
-
-#youtube-dark {
-    background-image: url("../public/img/sm/Youtube-dark.png");
-    background-color: #343a40;
-}
-
-#socialMediaButton-light {
-    background-image: url("../public/img/sm/SocialMedia-light.png");
-    background-color: white;
-}
-
-#socialMediaButton-dark {
-    background-image: url("../public/img/sm/SocialMedia-dark.png");
-    background-color: #343a40;
-}
-
-#twitterBird {
-    display: inline-block;
-    width: 36px;
-    height: 36px;
-    text-decoration: none;
-    background-image: url("../public/img/TwitIco.png");
-    background-color: transparent;
-}
-
-    #twitterBird:hover {
-        opacity: .5;
-        background-color: transparent;
-    }
-
-#InstaIco {
-    display: inline-block;
-    width: 36px;
-    height: 36px;
-    text-decoration: none;
-    background-image: url("../public/img/InstaIco.png");
-    background-color: transparent;
-    background-repeat: no-repeat;
-}
-
-    #InstaIco:hover {
-        opacity: .5;
-        background-color: transparent;
-    }
-
-#amazonWL {
-    display: inline-block;
-    width: 36px;
-    height: 36px;
-    text-decoration: none;
-    background-image: url("../public/img/amazon.png");
-    background-color: transparent;
-    background-repeat: no-repeat;
-}
-
-    #amazonWL:hover {
-        opacity: .5;
-        background-color: transparent;
-    }
 
 /* page elements
 ----------------------------------------------------------*/
@@ -1244,7 +1427,7 @@ aside {
     -ms-transition: background-color 0.4s, background-image 0.4s;
     transition: background-color 0.4s, background-image 0.4s;
     background-image: url(../public/img/banner/BannerNight.gif);
-    background-size: 75%;
+    background-size: 200%;
   }
   
   .slider:before {

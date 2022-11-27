@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import Socials from "./socials";
 import AccountInteraction from "./accountInteraction";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 class NavBar extends Component {
@@ -18,28 +18,28 @@ class NavBar extends Component {
       <nav className={(classStyle + theme)}>
         <div className="container-fluid">
 
-          <Link to="/" className="navbar-brand pZealNavIco">
-          <img src="./img/NavLogo2.png" alt="Project Zeal"/>{" "}
+          <Link to="/" className="navbar-brand navLogo">
+          {/* <img src="./img/NavLogo2.png" alt="Project Zeal"/>{" "}
             <span className="badge badge-pill badge-secondary">
               
-            </span>
+            </span> */}
           </Link>
 
-          <div>
-            {/* TODO: Navigation to other pages */}
+          <div className="navLinkContainer">
+            {/* TODO: Page Selected here then when click/hover opens underneat for options */}
             <div>
               <ul className="noBullet">
                 <li>
-                  <Link to="/aboutme">About Me</Link>
+                  <Link to="/aboutme" className={theme}>About Me</Link>
                 </li>
                 <li>
-                  <Link to="/portfolio">Portfolio</Link>
+                  <Link to="/portfolio" className={theme}>Portfolio</Link>
                 </li>
                 <li>
-                  <Link to="/contact">Contact</Link>
+                  <Link to="/contact" className={theme}>Contact</Link>
                 </li>
                 <li>
-                  <Link to="/service">Service</Link>
+                  <Link to="/service" className={theme}>Service</Link>
                 </li>
               </ul>
             </div>
@@ -50,7 +50,7 @@ class NavBar extends Component {
               <label className="switch">
                 <input
                   type="checkbox"
-                  onClick={() => this.props.themeUpdate()} //TODO: get themechange to work and render page
+                  onClick={() => this.props.themeUpdate()}
                 />
                 <span className="slider round"></span>
               </label>
@@ -59,7 +59,9 @@ class NavBar extends Component {
 
           <div>
             {/* TODO: Social Media Icons with hover over for expanding options */}
-            <Socials></Socials>
+            <Socials
+              theme={theme}
+              themeUpdate={this.props.themeUpdate} />
           </div>
         
           <div>
