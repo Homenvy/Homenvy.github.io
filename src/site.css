@@ -552,7 +552,7 @@ a.navLogo {
     display: inline-block;
     width: 48px;
     height: 48px;
-    padding-bottom: 62px;
+    padding-bottom: 61px;
     background: no-repeat;
 }
 
@@ -703,6 +703,18 @@ a.light {
     transition: background-color 0.4s, background-image 0.4s;
 }
 
+#twitch-light {
+    background-image: url("../public/img/sm/Twitch-light.png");
+    background-color: white;
+    width:48px;
+    height:48px;
+    margin: 1px;
+
+    -webkit-transition: background-color 0.4s, background-image 0.4s;
+    -ms-transition: background-color 0.4s, background-image 0.4s;
+    transition: background-color 0.4s, background-image 0.4s; 
+}
+
 #linkedIn-light {
     background-image: url("../public/img/sm/LinkedIn-light.png");
     background-color: white;
@@ -796,6 +808,18 @@ a.dark {
     -webkit-transition: background-color 0.4s, background-image 0.4s;
     -ms-transition: background-color 0.4s, background-image 0.4s;
     transition: background-color 0.4s, background-image 0.4s;
+}
+
+#twitch-dark {
+    background-image: url("../public/img/sm/Twitch-dark.png");
+    background-color: #343a40;
+    width:48px;
+    height:48px;
+    margin: 1px;
+
+    -webkit-transition: background-color 0.4s, background-image 0.4s;
+    -ms-transition: background-color 0.4s, background-image 0.4s;
+    transition: background-color 0.4s, background-image 0.4s; 
 }
 
 #youtube-dark {
@@ -1241,6 +1265,22 @@ ul#menu2 {
     filter: drop-shadow(0 5px 4px yellow);
     background-image: url("../public/img/Guest.png");
     background-color: transparent;
+}
+
+.disWidget {
+    position: absolute;
+    bottom: 0px;
+    height: 74px;
+    overflow: hidden;
+    z-index: 5002;
+
+    transition: height .3s linear;
+    -webkit-transition:  height .3s linear;
+    -ms-transition: height .3s linear;
+}
+
+.disWidget:hover {
+    height: 500px;
 }
 
 

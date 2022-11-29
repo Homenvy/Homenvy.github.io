@@ -15,7 +15,9 @@ class Socials extends Component {
           //onClick={""}
           >
             {/* TODO: Obtain more Social Media Icons
-                      Hover and Tap effect transitions */}
+                      Hover and Tap effect transitions
+                      onClick effect to lock menu out
+                      Setup the Main Icon to be comprised of small sm icons */}
           <div className={"socialObjContainer"+"-"+theme}>
             <Social 
               theme={theme}

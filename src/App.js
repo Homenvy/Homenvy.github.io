@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 import AboutMe from "./pages/AboutMe";
 import Service from "./pages/Service";
+import Resume from "./pages/Resume";
 
 class App extends Component {
   state = {
@@ -41,6 +42,7 @@ class App extends Component {
                     <Route path="contact" element={<Contact />}/>
                     <Route path="aboutme" element={<AboutMe />}/>
                     <Route path="service" element={<Service />}/>
+                    <Route path="resume" element={<Resume />}/>
                     <Route path="*" element={<NoPage />} />
                 </Route>
             </Routes>

@@ -43,16 +43,19 @@ class Social extends Component {
   render() {
     console.log("Social - Rendered");
 
-    return ( //TODO: add in isEnabled check from json
+    
+    return ( 
       <div className="iObjContainer">
         {SocialMedia.socialMedia.map((item, i) => (
-            <a 
-                href={item.url} 
-                id={(item.name + "-" + this.props.theme)} 
-                key={item.name} 
-                alt={item.name}
-                target="_blank"
-            />
+            (item.isEnabled === "1")
+                ? <a 
+                    href={item.url} 
+                    id={(item.name + "-" + this.props.theme)}
+                    key={item.name} 
+                    alt={item.name}
+                    target="_blank"
+                    />
+                : <div></div>
         ))}
       </div>
     );

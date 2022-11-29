@@ -1,8 +1,7 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import Socials from "./socials";
 import AccountInteraction from "./accountInteraction";
 import { Link } from "react-router-dom";
-
 
 class NavBar extends Component {
 // Stateless Functional Component (shortcut sfc)
@@ -17,16 +16,13 @@ class NavBar extends Component {
     return (
       <nav className={(classStyle + theme)}>
         <div className="container-fluid">
-
-          <Link to="/" className="navbar-brand navLogo">
-          {/* <img src="./img/NavLogo2.png" alt="Project Zeal"/>{" "}
-            <span className="badge badge-pill badge-secondary">
-              
-            </span> */}
-          </Link>
+          {/*TODO: Fix theme on local routes 
+                   setup an Activate variable for a few areas*/}
+          <Link to="/" className="navbar-brand navLogo" theme={theme}/>
 
           <div className="navLinkContainer">
-            {/* TODO: Page Selected here then when click/hover opens underneat for options */}
+            {/* TODO: Page Selected here then when click/hover opens underneat for options 
+                      Page youre on shows up, rest go in a drop down div*/}
             <div>
               <ul className="noBullet">
                 <li>

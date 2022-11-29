@@ -26,7 +26,7 @@ const Layout = (props) => {
         <NavBar 
           theme={theme}
           themeUpdate={themeType} />
-        <Outlet />
+        <Outlet context={theme}/>
     </>
   )
 };
