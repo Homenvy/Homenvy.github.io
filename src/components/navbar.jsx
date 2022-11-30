@@ -12,30 +12,44 @@ class NavBar extends Component {
     
     console.log("NavBar - Rendered");
     const classStyle = "navbar bg-";
+    let activePage = "Home";
     let theme = this.props.theme;
     return (
       <nav className={(classStyle + theme)}>
         <div className="container-fluid">
           {/*TODO: Fix theme on local routes 
                    setup an Activate variable for a few areas*/}
-          <Link to="/" className="navbar-brand navLogo" theme={theme}/>
+          <Link to="/" className="navbar-brand navLogo"/>
 
           <div className="navLinkContainer">
             {/* TODO: Page Selected here then when click/hover opens underneat for options 
                       Page youre on shows up, rest go in a drop down div*/}
-            <div>
+            <p className={theme}>{activePage}</p>
+            <div className={"navLinkDrawer " + theme}>
               <ul className="noBullet">
                 <li>
-                  <Link to="/aboutme" className={theme}>About Me</Link>
+                  <Link 
+                    to="/aboutme" 
+                    className={theme}
+                    onClick={() => this.props.currentPage("About Me")}>About Me</Link>
                 </li>
                 <li>
-                  <Link to="/portfolio" className={theme}>Portfolio</Link>
+                  <Link 
+                    to="/portfolio" 
+                    className={theme}
+                    onClick={() => this.props.currentPage("Portfolio")}>Portfolio</Link>
                 </li>
                 <li>
-                  <Link to="/contact" className={theme}>Contact</Link>
+                  <Link 
+                    to="/contact" 
+                    className={theme}
+                    onClick={() => this.props.currentPage("Contact")}>Contact</Link>
                 </li>
                 <li>
-                  <Link to="/service" className={theme}>Service</Link>
+                  <Link 
+                    to="/service" 
+                    className={theme}
+                    onClick={() => this.props.currentPage("Services")}>Service</Link>
                 </li>
               </ul>
             </div>

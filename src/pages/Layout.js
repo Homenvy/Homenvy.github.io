@@ -6,6 +6,12 @@ import NavBar from "../components/navbar";
 
 const Layout = (props) => {
   const [theme, setTheme] = useState(props.theme);
+  const [activePage, setActivePage] = useState(props.activePage);
+
+  const currentPage = (page) => {
+    setActivePage(page);
+    console.log(activePage);
+  }
 
   const themeType = () => {
     //TODO: Implement cookies to remember option
@@ -21,12 +27,18 @@ const Layout = (props) => {
     document.body.className = theme;
   }, [theme]);
 
+  useEffect (() => {
+    document.body.activePage = activePage;
+  }, [activePage]);
+
   return (
     <>
         <NavBar 
           theme={theme}
-          themeUpdate={themeType} />
-        <Outlet context={theme}/>
+          themeUpdate={themeType}
+          activePage={activePage}
+          currentPage={currentPage} />
+        <Outlet />
     </>
   )
 };

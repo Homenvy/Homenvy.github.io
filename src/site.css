@@ -64,7 +64,7 @@ mark {
 
 h1, h2, h3,
 h4, h5, h6 {
-    color: #000;
+    /* color: #000; */
     margin: 0px;
 }
 
@@ -535,8 +535,26 @@ a.navLogo {
 
 .navLinkContainer {
     position: relative;
-    height: 60px;
+    margin-top: 20px;
+    height: 40px;
     overflow: hidden;
+}
+
+.navLinkDrawer {
+    visibility: hidden;
+    height: 100%;
+}
+    .navLinkDrawer .dark {
+        background-color: #343a40;
+    }
+
+    .navLinkDrawer .light {
+        background-color: white;
+    }
+
+.navLinkContainer:hover .navLinkDrawer {
+    visibility: visible;
+    z-index: 5500;
 }
 
 /*------------------------Social Media------------------*/
@@ -638,10 +656,19 @@ a.navLogo {
 
 /* THEME - Light */
 
+.light {
+    color: black;
+    background-color: white;
+
+    transition: color .4s, background-color .4s;
+    -ms-transition: color .4s, background-color .4s;
+    -webkit-transition: color .4s, background-color .4s;
+}
+
 a.light {
-    -webkit-transition: color 0.4s;
-    -ms-transition: color 0.4s;
-    transition: color 0.4s;
+    -webkit-transition: color 0.4s, background-color .4s;
+    -ms-transition: color 0.4s, background-color .4s;
+    transition: color 0.4s, background-color .4s;
 }
 
 .bg-light {
@@ -738,6 +765,13 @@ a.light {
 
 /* THEME - Dark */
 
+.dark {
+    color: white;
+    background-color: #343a40;
+    transition: color .4s, background-color .4s;
+    -ms-transition: color .4s, background-color .4s;
+    -webkit-transition: color .4s, background-color .4s;
+}
 
 .bg-dark {
     /*this css is in bootstrap, add additional properties here
@@ -751,9 +785,9 @@ a.light {
 a.dark {
     color: white;
 
-    -webkit-transition: color 0.4s;
-    -ms-transition: color 0.4s;
-    transition: color 0.4s;
+    -webkit-transition: color 0.4s, background-color .4s;
+    -ms-transition: color 0.4s, background-color .4s;
+    transition: color 0.4s, background-color .4s;
 }
 
 .socialObjContainer-dark {
@@ -1650,6 +1684,7 @@ table {
     border-spacing: 0;
     margin-top: 0.75em;
     border: 0 none;
+    width: 100%;
 }
 
     table.admin thead tr th {
