@@ -1,0 +1,58 @@
+{
+    // TEMPLATE
+    // "serviceOptions" : [
+    //     {
+    //         "name": "",
+    //         "type": "",
+    //         "id": "",
+    //         "isEnabled": "0",
+    //         "description": "",
+    //         "serviceCode": "",
+    //     }
+    // ]
+        "serviceOptions" : [
+        {
+            "name": "Field Technician",
+            "type": "local",
+            "id": "FT",
+            "isEnabled": "1",
+            "description": "If you have any problems with your computer, printer, scanner, and other peripheral devices, 
+                I can try to help you resolve it over the phone or come down to diagnose the issue in person. If I can 
+                resolve the issue there, great! If not, there is an option to let me take home the computer and fix it. 
+                I also have experience with networks and understand network infrastructure.",
+            "serviceCode": "",
+        },
+        {
+            "name": "Device Modding",
+            "type": "local",
+            "id": "DM",
+            "isEnabled": "0",
+            "description": "I have modded various devices over the course of my life. Although there is risk in modding 
+                your devices (like bricking the software) I have a 100% success rate in various mods I have done. I have 
+                modded phones and various handheld devices. This also includes consoles.",
+            "serviceCode": "",
+        },
+        {
+            "name": "Device Cleaning",
+            "type": "local",
+            "id": "DC",
+            "isEnabled": "1",
+            "description": "Sometimes devices start acting funny due to overheating. This often occurs with wear and tear 
+                and usually can be fixed back up to working order with some cleaning and thermal paste re-application. I 
+                have cleaned various consoles to fix common overheating issues, like the Playstation 4. I can do this with 
+                most consoles, saving money and time in the process.",
+            "serviceCode": "",
+        },
+        {
+            "name": "Software Design",
+            "type": "remote",
+            "id": "SD",
+            "isEnabled": "1",
+            "description": "This is a broad topic, but I have had projects from clients for various things. I have designed 
+                a Discord bot for multiple Discord groups. I have designed and created various websites in different 
+                frameworks. I like to software engineer so if there is something you want done, do not be afraid to reach 
+                out! This website is a prime example of a site I developed.",
+            "serviceCode": "",
+        }
+    ]
+}

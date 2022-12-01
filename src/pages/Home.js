@@ -18,18 +18,29 @@ const Home = (props) => {
             frameBorder="0" 
             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
           </iframe> */}
-          <h1>Project Zeal</h1>
-          <p>Welcome to Project Zeal! What is this place you ask? Well it's very simple! This is a centralized
-            place to advertise myself. Since this site is hosted through Github Pages, it can only handle 
-            <b> static</b> content. This means I cannot load information from say... a database. To route some of
-            these features I will be using json files. I do have experience with databasing.
-          </p>
-          <p>This site will show off development I am capable of (front-end) and also have a page
-            that will show the services I offer. This Page will turn out to be an "overview" of the site, 
-            giving you a little taste before you get to see the pages. I will give a brief explanation of each page
-            here.
-          </p>
-          <table>
+          <div className="contentCanvas">
+            <p>Welcome to my site! Throughout my life I always have themed my projects. These themes usually
+              come from other games. This particular theme is from Chrono Trigger, one of my favorite games. 
+              I always try to design and engineer interesting software. I try to expand upon both old and new 
+              ideas to improve efficiency, but to also expand my understanding of what I can do with code. This
+              site is currently a work in progress. I hope you are as excited as I am to see how this turns out!
+            </p>
+            <p>There was once a site I worked on. Developed and engineered it in .net C# using the MVC4 framework.
+              I was implementing all I could to help this person out. The site was fabulous. I worked on it until
+              it was around 85% complete, then a tragedy occurred. This resulted in the project not seeing the light
+              of day. Although the project itself did not get to fully launch, the features and functionality are 
+              not lost. I have decided to convert the site into a template that I can use. This site is one of the
+              processes towards that goal. 
+            </p>
+            <p>This site will show off development I am capable of... a sort of portfolio. The goal here is to have 
+              this site serve as a reference to possible job opportunities and market my abilities to various 
+              communities. I have done various types of technical work, ranging from hardware IT related issues to 
+              network implementation, troubleshooting, resolving and designing and engineering software. I have 
+              always come back and forth between the three, but software design and engineering seem to be my
+              specialty.
+            </p>
+          </div>
+          {/* <table>
             <thead>
               <tr>
                 <th>Priority</th>
@@ -50,7 +61,7 @@ const Home = (props) => {
                     <tr key={i}></tr>
               ))}
             </tbody>
-          </table>
+          </table> */}
             
         </div>
       </>

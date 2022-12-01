@@ -1,5 +1,5 @@
 const Portfolio = () => {
-    return <h1>Portfolio</h1>;
+    return <p>Get Hyped.</p>;
   };
   
   export default Portfolio;

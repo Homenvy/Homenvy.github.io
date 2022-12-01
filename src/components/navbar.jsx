@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Socials from "./socials";
 import AccountInteraction from "./accountInteraction";
-import { Link } from "react-router-dom";
+import AppRoutes from "../Routes.json";
+import { Link, Routes } from "react-router-dom";
 
 class NavBar extends Component {
 // Stateless Functional Component (shortcut sfc)
@@ -12,48 +13,19 @@ class NavBar extends Component {
     
     console.log("NavBar - Rendered");
     const classStyle = "navbar bg-";
-    let activePage = "Home";
+    let activePage = this.props.activePage;
     let theme = this.props.theme;
+    console.log(activePage);
     return (
       <nav className={(classStyle + theme)}>
         <div className="container-fluid">
           {/*TODO: Fix theme on local routes 
                    setup an Activate variable for a few areas*/}
-          <Link to="/" className="navbar-brand navLogo"/>
-
-          <div className="navLinkContainer">
-            {/* TODO: Page Selected here then when click/hover opens underneat for options 
-                      Page youre on shows up, rest go in a drop down div*/}
-            <p className={theme}>{activePage}</p>
-            <div className={"navLinkDrawer " + theme}>
-              <ul className="noBullet">
-                <li>
-                  <Link 
-                    to="/aboutme" 
-                    className={theme}
-                    onClick={() => this.props.currentPage("About Me")}>About Me</Link>
-                </li>
-                <li>
-                  <Link 
-                    to="/portfolio" 
-                    className={theme}
-                    onClick={() => this.props.currentPage("Portfolio")}>Portfolio</Link>
-                </li>
-                <li>
-                  <Link 
-                    to="/contact" 
-                    className={theme}
-                    onClick={() => this.props.currentPage("Contact")}>Contact</Link>
-                </li>
-                <li>
-                  <Link 
-                    to="/service" 
-                    className={theme}
-                    onClick={() => this.props.currentPage("Services")}>Service</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <Link 
+            to="/" 
+            className="navbar-brand navLogo"
+            onClick={() => this.props.currentPage("Project Zeal")}
+          />
 
           <div>
             <div className="radar-toggle">
@@ -67,6 +39,25 @@ class NavBar extends Component {
             </div>
           </div>
 
+          <div className="navLinkContainer">
+            {/* TODO: Page Selected here then when click/hover opens underneat for options 
+                      Page youre on shows up, rest go in a drop down div*/}
+            <h1 className={theme} style={{fontSize: "2em", margin: "0"}}>{activePage}</h1>
+            <div className={"navLinkDrawer " + theme}>
+              <ul className="noBullet">
+                  {AppRoutes.routes.map((item, i) => (
+                    (item.isEnabled) ?
+                    <li key={item.name}>
+                      <Link 
+                        to={item.to}
+                        className={theme}
+                        onClick={() => this.props.currentPage(item.name)}>{item.name}</Link>
+                    </li> :
+                      ""
+                  ))} 
+              </ul>
+            </div>
+          </div>
           <div>
             {/* TODO: Social Media Icons with hover over for expanding options */}
             <Socials
@@ -83,21 +74,6 @@ class NavBar extends Component {
       </nav>
     )
   };
-
-  // themeChange() {
-  //   let theme = this.props.theme;
-  //   console.log("this happened. " + theme);
-  //   if (theme === "light"){
-  //     console.log("dark");
-  //     theme = "dark";
-  //   } else {
-  //     console.log("light");
-  //     theme = "light";
-  //   }
-  //   console.log("pass through: " + theme);
-  //   this.state.themeState = theme;
-  //   this.render();
-  // }
 };
 
 // use SFC over class in situations like the nav bar

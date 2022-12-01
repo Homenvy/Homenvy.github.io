@@ -1,0 +1,29 @@
+{
+    "routes" : [
+        {
+            "name": "About Me",
+            "to": "/aboutme",
+            "isEnabled": "1"
+        },
+        {
+            "name": "Portfolio",
+            "to": "/portfolio",
+            "isEnabled": "1"
+        },
+        {
+            "name": "Contact",
+            "to": "/contact",
+            "isEnabled": "1"
+        },
+        {
+            "name": "Services",
+            "to": "/service",
+            "isEnabled": "1"
+        },
+        {
+            "name": "Resume",
+            "to": "/resume",
+            "isEnabled": "0"
+        }
+    ]
+}

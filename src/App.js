@@ -15,7 +15,7 @@ import Resume from "./pages/Resume";
 class App extends Component {
   state = {
     theme: "light",
-    activePage: "home"
+    activePage: "Project Zeal"
   };
 
   //only called once and used to initiate properties of App
@@ -37,8 +37,10 @@ class App extends Component {
         <React.Fragment>
           <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Layout theme={this.state.theme} />}>
-                    <Route index element={<Home theme={this.state.theme} />} />
+                <Route path="/" element={<Layout theme={this.state.theme} 
+                                            activePage={this.state.activePage}
+                                          />}>
+                    <Route index element={<Home />} />
                     <Route path="portfolio" element={<Portfolio />}/>
                     <Route path="contact" element={<Contact />}/>
                     <Route path="aboutme" element={<AboutMe />}/>
@@ -56,7 +58,7 @@ class App extends Component {
               onDelete={this.handleDelete} />
           </main> */}
         </React.Fragment>
-        <p>Be hyped for what's to come.
+        <p style={{textAlign: "center"}}>Be hyped for what's to come.
       </p>
     </>
     );

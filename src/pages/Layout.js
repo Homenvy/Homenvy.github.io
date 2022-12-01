@@ -8,11 +8,6 @@ const Layout = (props) => {
   const [theme, setTheme] = useState(props.theme);
   const [activePage, setActivePage] = useState(props.activePage);
 
-  const currentPage = (page) => {
-    setActivePage(page);
-    console.log(activePage);
-  }
-
   const themeType = () => {
     //TODO: Implement cookies to remember option
     //TODO: By default theme should mirror state of day
@@ -37,8 +32,9 @@ const Layout = (props) => {
           theme={theme}
           themeUpdate={themeType}
           activePage={activePage}
-          currentPage={currentPage} />
+          currentPage={setActivePage} />
         <Outlet />
+        {/* <Footer /> */}
     </>
   )
 };

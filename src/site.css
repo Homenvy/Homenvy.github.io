@@ -1,5 +1,4 @@
 ﻿html {
-    background-color: #e2e2e2;
     margin: 0;
     padding: 0;
 }
@@ -22,7 +21,7 @@ a {
 }
 
     a:link, a:visited {
-        color: #444;
+        /* color: #444; */
     }
 
     a.contrastFix:link, a.contrastFix:visited {
@@ -69,7 +68,7 @@ h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
 }
 
@@ -212,6 +211,13 @@ a.categoryButton {
 ul.noBullet {
     list-style-type: none;
     padding-left: 0px;
+}
+
+.contentCanvas {
+    border: 1px solid #fff;
+    margin: 15px 5%;
+    padding: 10px 15px;
+    border-radius: 15px;
 }
 
 .content-wrapper {
@@ -534,15 +540,25 @@ a.navLogo {
     }
 
 .navLinkContainer {
-    position: relative;
-    margin-top: 20px;
     height: 40px;
+    width: 200px;
     overflow: hidden;
+    z-index: 500;
+}
+
+.navLinkContainer:hover {
+    overflow:visible;
 }
 
 .navLinkDrawer {
     visibility: hidden;
-    height: 100%;
+    height: 0px;
+    overflow: hidden;
+    text-align: center;
+
+    -webkit-transition: height 0.4s ease-out, background-color .4s;
+    -ms-transition: height 0.4s ease-out, background-color .4s;
+    transition: height 0.4s ease-out, background-color .4s;
 }
     .navLinkDrawer .dark {
         background-color: #343a40;
@@ -552,9 +568,20 @@ a.navLogo {
         background-color: white;
     }
 
-.navLinkContainer:hover .navLinkDrawer {
+.navLinkContainer:hover .navLinkDrawer, .navLinkDrawer:hover {
     visibility: visible;
-    z-index: 5500;
+    height: 100px;
+    padding: 0 25px;
+    height: 100px;
+    width: 100%;
+
+    -webkit-transition: height 0.4s ease-out;
+    -ms-transition: height 0.4s ease-out;
+    transition: height 0.4s ease-out;
+}
+
+.navLinkDrawer:hover .navLinkContainer {
+    overflow:visible;
 }
 
 /*------------------------Social Media------------------*/
@@ -1052,7 +1079,7 @@ ul#menu2 {
     width: 350px;
     height: 275px;
     filter: drop-shadow(0 0 2px white);
-    z-index: 1500;
+    z-index: 1001;
 
 }
 
