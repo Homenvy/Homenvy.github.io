@@ -12,10 +12,9 @@ class NavBar extends Component {
   render() {
     
     console.log("NavBar - Rendered");
-    const classStyle = "navbar bg-";
+    const classStyle = "navbar ";
     let activePage = this.props.activePage;
     let theme = this.props.theme;
-    console.log(activePage);
     return (
       <nav className={(classStyle + theme)}>
         <div className="container-fluid">
@@ -32,7 +31,7 @@ class NavBar extends Component {
               <label className="switch">
                 <input
                   type="checkbox"
-                  onClick={() => this.props.themeUpdate()}
+                  onClick={() => this.props.toggleTheme()}
                 />
                 <span className="slider round"></span>
               </label>
@@ -51,7 +50,8 @@ class NavBar extends Component {
                       <Link 
                         to={item.to}
                         className={theme}
-                        onClick={() => this.props.currentPage(item.name)}>{item.name}</Link>
+                        onClick={() => this.props.currentPage(item.name)}>{item.name}
+                      </Link>
                     </li> :
                       ""
                   ))} 
@@ -60,9 +60,7 @@ class NavBar extends Component {
           </div>
           <div>
             {/* TODO: Social Media Icons with hover over for expanding options */}
-            <Socials
-              theme={theme}
-              themeUpdate={this.props.themeUpdate} />
+            <Socials theme={theme} />
           </div>
         
           <div>

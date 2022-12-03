@@ -214,8 +214,11 @@ ul.noBullet {
 }
 
 .contentCanvas {
+    position:relative;
+    top: -500px;
+    z-index: 1001;
     border: 1px solid #fff;
-    margin: 15px 5%;
+    margin: 0px 5% 15px 5%;
     padding: 10px 15px;
     border-radius: 15px;
 }
@@ -1089,6 +1092,35 @@ ul#menu2 {
     height: 500px;
     position:relative;
     top: 137px;
+    z-index: 1000;
+    margin-left: -64px;
+
+    animation-name: passingClouds;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    -webkit-animation-name: passingClouds;
+    -webkit-animation-duration: 4s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+
+    -moz-animation-name: passingClouds;
+    -moz-animation-duration: 4s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+
+    -o-animation-name: passingClouds;
+    -o-animation-duration: 4s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+}
+
+#cloud {
+    background-image: url(../public/img/banner/BannerCloud.png);
+    background-repeat: repeat;
+    position:relative;
+    height: 500px;
     z-index: 1000;
     margin-left: -64px;
 

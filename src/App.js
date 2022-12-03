@@ -26,12 +26,22 @@ class App extends Component {
     //this.state = this.props.something;
   }
 
+  toggleTheme = () => {
+    //TODO: Implement cookies to remember option
+    //TODO: By default theme should mirror state of day
+    this.setState(state => ({
+      theme:
+       state.theme === "light"
+        ? state.theme = "dark"
+        : state.theme = "light"
+    }));    
+  };
+
   componentDidMount() {
     console.log("App - Mounted");
   }
 
   render() {
-
     return (
       <>
         <React.Fragment>
@@ -39,8 +49,9 @@ class App extends Component {
             <Routes>
                 <Route path="/" element={<Layout theme={this.state.theme} 
                                             activePage={this.state.activePage}
+                                            toggleTheme={this.toggleTheme}
                                           />}>
-                    <Route index element={<Home />} />
+                    <Route index element={<Home theme={this.state.theme}/>} />
                     <Route path="portfolio" element={<Portfolio />}/>
                     <Route path="contact" element={<Contact />}/>
                     <Route path="aboutme" element={<AboutMe />}/>
@@ -59,8 +70,8 @@ class App extends Component {
           </main> */}
         </React.Fragment>
         <p style={{textAlign: "center"}}>Be hyped for what's to come.
-      </p>
-    </>
+        </p>
+      </>
     );
   }
 }
