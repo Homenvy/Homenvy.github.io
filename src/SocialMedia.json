@@ -3,27 +3,38 @@
         {
             "name": "discord",
             "isEnabled": "1",
-            "url": "https://discord.gg/DhX5VwzD4y"
+            "url": "https://discord.gg/DhX5VwzD4y",
+            "color": "#5662f6"
         },
         {
             "name": "github",
             "isEnabled": "1",
-            "url": "https://github.com/Homenvy"
+            "url": "https://github.com/Homenvy",
+            "color": "#666666"
         },
         {
             "name": "linkedIn",
             "isEnabled": "1",
-            "url": "https://www.linkedin.com/in/michael-ess-haghabodi-680170246/"
+            "url": "https://www.linkedin.com/in/michael-ess-haghabodi-680170246/",
+            "color": "#4169e1"
+        },
+        {
+            "name": "steam",
+            "isEnabled": "1",
+            "url": "https://steamcommunity.com/id/HomEnvy/",
+            "color": "#143e70"
         },
         {
             "name": "twitch",
             "isEnabled": "1",
-            "url": "https://www.twitch.tv/homenvy"
+            "url": "https://www.twitch.tv/homenvy",
+            "color": "#9146ff"
         },
         {
             "name": "youtube",
             "isEnabled": "1",
-            "url": "https://www.youtube.com/channel/UCpo7rZFkjKUWkDqumItHL2Q"
+            "url": "https://www.youtube.com/channel/UCpo7rZFkjKUWkDqumItHL2Q",
+            "color": "#ff0000"
         }
     ]
 }

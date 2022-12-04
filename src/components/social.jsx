@@ -46,6 +46,7 @@ class Social extends Component {
     
     return ( 
       <div className="iObjContainer">
+        {/* <ul className="neon"> */}
         {SocialMedia.socialMedia.map((item, i) => (
             (item.isEnabled === "1")
                 ? <a 
@@ -53,8 +54,11 @@ class Social extends Component {
                     id={(item.name + "-" + this.props.theme)}
                     key={item.name} 
                     alt={item.name}
+                    style={{"--clr": item.color}}
                     target="_blank"
-                    />
+                    >
+                    </a>
+                    
                 : <div></div>
         ))}
       </div>
