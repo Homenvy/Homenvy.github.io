@@ -18,6 +18,7 @@ const Home = (props) => {
               frameBorder="0" 
               sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
             </iframe> */}
+            <div style={{height: "0px"}}>
               <div className={"contentCanvas " + theme}>
                 <p>Welcome to my site! Throughout my life I always have themed my projects. These themes usually
                   come from other games. This particular theme is from Chrono Trigger, one of my favorite games. 
@@ -33,6 +34,7 @@ const Home = (props) => {
                   specialty.
                 </p>
               </div>
+            </div>
           {/* <table> This could be used in the footer for a sitemap
             <thead>
               <tr>

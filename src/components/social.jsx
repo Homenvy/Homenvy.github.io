@@ -53,12 +53,12 @@ class Social extends Component {
                     href={item.url} 
                     id={(item.name + "-" + this.props.theme)}
                     key={item.name} 
+                    className="neon"
                     alt={item.name}
                     style={{"--clr": item.color}}
                     target="_blank"
                     >
                     </a>
-                    
                 : <div></div>
         ))}
       </div>

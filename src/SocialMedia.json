@@ -10,7 +10,7 @@
             "name": "github",
             "isEnabled": "1",
             "url": "https://github.com/Homenvy",
-            "color": "#666666"
+            "color": "#999999"
         },
         {
             "name": "linkedIn",
@@ -22,7 +22,7 @@
             "name": "steam",
             "isEnabled": "1",
             "url": "https://steamcommunity.com/id/HomEnvy/",
-            "color": "#143e70"
+            "color": "#fff"
         },
         {
             "name": "twitch",

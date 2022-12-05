@@ -214,8 +214,8 @@ ul.noBullet {
 }
 
 .contentCanvas {
-    position:absolute;
-    bottom: 10%;
+    position:relative;
+    bottom: 500px;
     z-index: 1001;
     border: 1px solid #fff;
     margin: 0px 5% 15px 5%;
@@ -595,27 +595,22 @@ a.navLogo {
 
 /*------------------------Neon Icons--------------------*/
 
-/* ul.neon {
-    margin:0;
+.neon {
+    /* margin:0;
     padding:0;
     display: flex;
     position: absolute;
     top: 50%;
     left: 50%;
     
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
 }
 
-ul li.neon {
-    list-style: none;
-    margin: 0 15px;
-}
-
-ul li a.neon {
-    position: relative;
+a.neon {
+    /* position: relative;
     display: block;
     text-align: center;
-    line-height: 63px;
+    line-height: 63px; */
     background: #333;
     border-radius: 50%;
     font-size: 30px;
@@ -623,13 +618,11 @@ ul li a.neon {
     transition: .5s;
 }
 
-ul li a::before.neon {
+a.neon::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: var(--clr);
     transition: .5s;
@@ -637,16 +630,17 @@ ul li a::before.neon {
     z-index: -1;
 }
 
-ul li a:hover::before.neon {
+a:hover.neon::before {
     transform: scale(1.1);
     box-shadow: 0 0 15px var(--clr);
 }
 
-ul li a:hover.neon {
+a:hover.neon {
     color: var(--clr);
     box-shadow: 0 0 5px var(--clr);
     text-shadow: 0 0 5px var(--clr);
-} */
+    background-color: var(--clr);
+}
 
 /*------------------------Social Media------------------*/
 
@@ -732,9 +726,9 @@ ul li a:hover.neon {
 
 .socialObjContainer-dark, .socialObjContainer-light {
     position: relative;
-    top: 60px;
-    right: 50px;
-    width: 150px;
+    top: 61px;
+    right: 65px;
+    width: 175px;
     height: 0px;
     opacity: 0;
     visibility: hidden;
@@ -773,10 +767,10 @@ a.light {
 }
 
 .socialObjContainer-light:hover, .iContainer:hover .socialObjContainer-light {
-    background-color: white;
     visibility: visible;
-    width: 150px;
-    height: 100px;
+    width: 175px;
+    height: 115px;
+    padding: 5px;
     opacity: 1;
     z-index: 5000;
 
@@ -789,7 +783,7 @@ a.light {
     background-image: url("../public/img/sm/Youtube-light.png");
     width:48px;
     height:48px;
-    margin: 1px;
+    margin: 2.5px;
 
     -webkit-transition: background-color 0.4s, background-image 0.4s;
     -ms-transition: background-color 0.4s, background-image 0.4s;
@@ -800,7 +794,7 @@ a.light {
     background-image: url("../public/img/sm/Discord-light.png");
     width:48px;
     height:48px;
-    margin: 1px;
+    margin: 2.5px;
 
     -webkit-transition: background-color 0.4s, background-image 0.4s;
     -ms-transition: background-color 0.4s, background-image 0.4s;
@@ -811,7 +805,7 @@ a.light {
     background-image: url("../public/img/sm/Github-light.png");
     width:48px;
     height:48px;
-    margin: 1px;
+    margin: 2.5px;
 
     -webkit-transition: background-color 0.4s, background-image 0.4s;
     -ms-transition: background-color 0.4s, background-image 0.4s;
@@ -822,7 +816,7 @@ a.light {
     background-image: url("../public/img/sm/Twitch-light.png");
     width:48px;
     height:48px;
-    margin: 1px;
+    margin: 2.5px;
 
     -webkit-transition: background-color 0.4s, background-image 0.4s;
     -ms-transition: background-color 0.4s, background-image 0.4s;
@@ -833,7 +827,7 @@ a.light {
     background-image: url("../public/img/sm/Steam-light.png");
     width:48px;
     height:48px;
-    margin: 1px;
+    margin: 2.5px;
 
     -webkit-transition: background-color 0.4s, background-image 0.4s;
     -ms-transition: background-color 0.4s, background-image 0.4s;
@@ -844,7 +838,7 @@ a.light {
     background-image: url("../public/img/sm/LinkedIn-light.png");
     width:48px;
     height:48px;
-    margin: 1px;
+    margin: 2.5px;
 
     -webkit-transition: background-color 0.4s, background-image 0.4s;
     -ms-transition: background-color 0.4s, background-image 0.4s;
@@ -893,10 +887,10 @@ a.dark {
 
 
 .socialObjContainer-dark:hover, .iContainer:hover .socialObjContainer-dark {
-    background-color: #343a40;
     visibility: visible;
-    width: 150px;
-    height: 100px;
+    width: 175px;
+    height: 115px;
+    padding: 5px;
     opacity: 1;
     z-index: 5000;
 
@@ -909,7 +903,7 @@ a.dark {
     background-image: url("../public/img/sm/Discord-dark.png");
     width:48px;
     height:48px;
-    margin: 1px;
+    margin: 2.5px;
 
     -webkit-transition: background-color 0.4s, background-image 0.4s;
     -ms-transition: background-color 0.4s, background-image 0.4s;
@@ -920,7 +914,7 @@ a.dark {
     background-image: url("../public/img/sm/Github-dark.png");
     width:48px;
     height:48px;
-    margin: 1px;
+    margin: 2.5px;
 
     -webkit-transition: background-color 0.4s, background-image 0.4s;
     -ms-transition: background-color 0.4s, background-image 0.4s;
@@ -932,7 +926,7 @@ a.dark {
     /* background-color: #343a40; */
     width:48px;
     height:48px;
-    margin: 1px;
+    margin: 2.5px;
 
     -webkit-transition: background-color 0.4s, background-image 0.4s;
     -ms-transition: background-color 0.4s, background-image 0.4s;
@@ -943,7 +937,7 @@ a.dark {
     background-image: url("../public/img/sm/Steam-dark.png");
     width:48px;
     height:48px;
-    margin: 1px;
+    margin: 2.5px;
 
     -webkit-transition: background-color 0.4s, background-image 0.4s;
     -ms-transition: background-color 0.4s, background-image 0.4s;
@@ -954,7 +948,7 @@ a.dark {
     background-image: url("../public/img/sm/Twitch-dark.png");
     width:48px;
     height:48px;
-    margin: 1px;
+    margin: 2.5px;
 
     -webkit-transition: background-color 0.4s, background-image 0.4s;
     -ms-transition: background-color 0.4s, background-image 0.4s;
@@ -965,7 +959,7 @@ a.dark {
     background-image: url("../public/img/sm/Youtube-dark.png");
     width:48px;
     height:48px;
-    margin: 1px;
+    margin: 2.5px;
 
     -webkit-transition: background-color 0.4s, background-image 0.4s;
     -ms-transition: background-color 0.4s, background-image 0.4s;
