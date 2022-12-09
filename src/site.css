@@ -213,9 +213,12 @@ ul.noBullet {
     padding-left: 0px;
 }
 
+.indexCanvas {
+    bottom: 700px;
+}
+
 .contentCanvas {
     position:relative;
-    bottom: 500px;
     z-index: 1001;
     border: 1px solid #fff;
     margin: 0px 5% 15px 5%;
@@ -726,7 +729,7 @@ a:hover.neon {
 
 .socialObjContainer-dark, .socialObjContainer-light {
     position: relative;
-    top: 61px;
+    top: 60px;
     right: 65px;
     width: 175px;
     height: 0px;
@@ -1188,7 +1191,7 @@ ul#menu2 {
     background-image: url(../public/img/banner/BannerCloud.png);
     background-repeat: repeat;
     position:relative;
-    height: 500px;
+    height: 750px;
     z-index: 1000;
     margin-left: -64px;
 

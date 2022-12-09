@@ -69,8 +69,6 @@ class App extends Component {
               onDelete={this.handleDelete} />
           </main> */}
         </React.Fragment>
-        <p style={{textAlign: "center"}}>Be hyped for what's to come.
-        </p>
       </>
     );
   }

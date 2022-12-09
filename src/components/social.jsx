@@ -45,23 +45,22 @@ class Social extends Component {
 
     
     return ( 
-      <div className="iObjContainer">
-        {/* <ul className="neon"> */}
-        {SocialMedia.socialMedia.map((item, i) => (
-            (item.isEnabled === "1")
-                ? <a 
-                    href={item.url} 
-                    id={(item.name + "-" + this.props.theme)}
-                    key={item.name} 
-                    className="neon"
-                    alt={item.name}
-                    style={{"--clr": item.color}}
-                    target="_blank"
-                    >
-                    </a>
-                : <div></div>
-        ))}
-      </div>
+        <div className="iObjContainer">
+            {SocialMedia.socialMedia.map((item, i) => (
+                (item.isEnabled === "1")
+                    ? <a 
+                        href={item.url} 
+                        id={(item.name + "-" + this.props.theme)}
+                        key={item.name} 
+                        className="neon"
+                        alt={item.name}
+                        style={{"--clr": item.color}}
+                        target="_blank"
+                        >
+                        </a>
+                    : <div></div>
+            ))}
+        </div>
     );
   }
 }
