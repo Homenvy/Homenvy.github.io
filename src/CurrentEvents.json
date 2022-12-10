@@ -1,34 +1,34 @@
 {
     "currentEvents" : [
         {
-            "name": "Home",
             "isEnabled": "1",
-            "desc": "This is the landing page. I want to fill this page out with content.",
-            "route": "/"
+            "name": "Changelog",
+            "date": "12/10/2022",
+            "desc": "Changelog has been added on Homepage.js. Each log will be represented in a json file. Added traversing through the changelog: this is basic but pressing the + or - will traverse the dates and what changes were on them. This is the first entry and will start from here. "
         },
         {
-            "name": "Service",
             "isEnabled": "1",
-            "desc": "A page about all the local and remote services available.",
-            "route": "/service"
+            "name": "Discord",
+            "date": "12/10/2022",
+            "desc": "Small Discord widget added to the footer to show my discord server and the members connected to it. You can even see what game they are playing. Formatted to react on Hover and activate"
         },
         {
             "name": "About Me",
-            "isEnabled": "1",
+            "isEnabled": "0",
             "desc": "I am thinking of putting my Portfolio and a resume-styled page in this.",
             "route": "/aboutme"
         },
         {
-            "name": "",
-            "isEnabled": "0",
-            "desc": "",
-            "route": ""
+            "isEnabled": "1",
+            "name": "Test",
+            "date": "12/10/2022",
+            "desc": "This is a test entry to see placement"
         },
         {
-            "name": "",
-            "isEnabled": "0",
-            "desc": "",
-            "route": ""
+            "isEnabled": "1",
+            "name": "Test",
+            "date": "12/9/2022",
+            "desc": "This is to see how previous dates can be displayed with the + and - features"
         }
     ]
 }

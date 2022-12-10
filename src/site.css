@@ -214,7 +214,7 @@ ul.noBullet {
 }
 
 .indexCanvas {
-    bottom: 700px;
+    bottom: 900px;
 }
 
 .contentCanvas {
@@ -524,6 +524,17 @@ footer {
     font-size: .8em;
     height: 100px;
 }
+/* -----------------------------CHANGELOG----------------------------*/
+
+table.changeLog {
+    margin: 0px;
+    text-align: center;
+}
+
+table.changeLog th {
+    text-align: center;
+}
+
 /* -----------------------------NAVIGATION---------------------------*/
 
 nav.navbar {
@@ -1191,7 +1202,7 @@ ul#menu2 {
     background-image: url(../public/img/banner/BannerCloud.png);
     background-repeat: repeat;
     position:relative;
-    height: 750px;
+    height: 950px;
     z-index: 1000;
     margin-left: -64px;
 
@@ -1433,18 +1444,18 @@ ul#menu2 {
 
 .disWidget {
     position: absolute;
-    bottom: 0px;
     height: 74px;
     overflow: hidden;
     z-index: 5002;
 
-    transition: height .3s linear;
-    -webkit-transition:  height .3s linear;
-    -ms-transition: height .3s linear;
+    transition: all .3s linear;
+    -webkit-transition:  all .3s linear;
+    -ms-transition: all .3s linear;
 }
 
 .disWidget:hover {
     height: 500px;
+    transform: translateY(-426px);
 }
 
 

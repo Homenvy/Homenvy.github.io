@@ -18,7 +18,7 @@ const Layout = (props) => {
           activePage={activePage}
           currentPage={setActivePage} />
         <Outlet />
-        <Footer />
+        <Footer theme={props.theme}/>
     </>
   )
 };

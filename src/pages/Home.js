@@ -1,23 +1,16 @@
 import Banner from "../components/banner/banner";
+import ChangeLog from "../components/changelog";
 import CurrentEvents from "../CurrentEvents.json";
 import { Link } from "react-router-dom";
 
 const Home = (props) => {
     let theme = props.theme;
+
     return (
       <>
         <Banner />
         <div className={"contentContainer"}>
           <div id="cloud" />
-            {/* <iframe 
-              src={("https://discord.com/widget?id=362750172385509377&theme="+theme)}
-              width="350" 
-              height="500" 
-              allowtransparency="true" 
-              className="disWidget"
-              frameBorder="0" 
-              sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
-            </iframe> */}
             <div style={{height: "0px"}}>
               <div className={"contentCanvas indexCanvas " + theme}>
                 <p>You must be wondering, "What is this site?". I have started setting up this site in REACT for multiple
@@ -47,54 +40,14 @@ const Home = (props) => {
                   CSS elements to look cool and save space. With a mobile-first approach, I would want the site to adapt
                   to any resolution and flow smoothly for the end-user. 
                 </p>
-                {/* TODO: make a table that has updates on it. 
-                          date, title, desc, all loaded from a json
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Priority</th>
-                      <th>Page</th>
-                      <th>Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {CurrentEvents.currentEvents.map((item, i) => (
-                      (item.isEnabled === "1")
-                        ? 
-                          <tr key={item.name}>
-                            <td>{i+1}</td>
-                            <td><Link to={item.route}>{item.name}</Link></td>
-                            <td>{item.desc}</td>
-                          </tr> 
-                        : 
-                          <tr key={i}></tr>
-                    ))}
-                  </tbody>
-                </table> */}
+              </div>
+              <div className={"contentCanvas indexCanvas " + theme}>
+                <ChangeLog />
               </div>
             </div>
-          {/* <table> This could be used in the footer for a sitemap
-            <thead>
-              <tr>
-                <th>Priority</th>
-                <th>Page</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {CurrentEvents.currentEvents.map((item, i) => (
-                (item.isEnabled === "1")
-                  ? 
-                    <tr key={item.name}>
-                      <td>{i+1}</td>
-                      <td><Link to={item.route}>{item.name}</Link></td>
-                      <td>{item.desc}</td>
-                    </tr> 
-                  : 
-                    <tr key={i}></tr>
-              ))}
-            </tbody>
-          </table> */}
+          {/* TODO: Date sifting based on current date. Check date formats
+                    Create arrows that can be clicked on and see through the logs
+                    */}
             
         </div>
       </>

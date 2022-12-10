@@ -43,7 +43,6 @@ class Social extends Component {
   render() {
     console.log("Social - Rendered");
 
-    
     return ( 
         <div className="iObjContainer">
             {SocialMedia.socialMedia.map((item, i) => (
