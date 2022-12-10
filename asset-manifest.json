@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.18de2a0b.css",
-    "main.js": "/static/js/main.729efd4c.js",
+    "main.css": "/static/css/main.a80c5c69.css",
+    "main.js": "/static/js/main.8cdb6056.js",
     "static/media/PalaceZeal.png": "/static/media/PalaceZeal.aac1433da62cd9ac9b17.png",
     "static/media/BannerLogo.png": "/static/media/BannerLogo.84e8139f3b6f3877070f.png",
     "index.html": "/index.html",
-    "main.18de2a0b.css.map": "/static/css/main.18de2a0b.css.map",
-    "main.729efd4c.js.map": "/static/js/main.729efd4c.js.map"
+    "main.a80c5c69.css.map": "/static/css/main.a80c5c69.css.map",
+    "main.8cdb6056.js.map": "/static/js/main.8cdb6056.js.map"
   },
   "entrypoints": [
-    "static/css/main.18de2a0b.css",
-    "static/js/main.729efd4c.js"
+    "static/css/main.a80c5c69.css",
+    "static/js/main.8cdb6056.js"
   ]
 }
