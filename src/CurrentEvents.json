@@ -29,6 +29,18 @@
             "name": "Test",
             "date": "12/9/2022",
             "desc": "This is to see how previous dates can be displayed with the + and - features"
+        },
+        {
+            "isEnabled": "1",
+            "name": "Changelog",
+            "date": "12/31/2022",
+            "desc": "Finished function to traverse date. Will change the changelog to only load dates with entries."
+        },
+        {
+            "isEnabled": "1",
+            "name": "Information",
+            "date": "12/31/2022",
+            "desc": "Skill assessment was completed. View it at: http://github.com/homenvy/CTAssessmentTest"
         }
     ]
 }

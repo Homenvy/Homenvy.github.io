@@ -10,25 +10,38 @@ class ChangeLog extends Component {
         return new Date(year, month, 0).getDate();
     };
 
-    daySelection = (passDays) => {
-        /*TODO: Handle new months and new years in incrementing / decrementing
+    dateTraverse = (passDays) => {
+        /*TODO: Figure out how to display only known entries
+                Idea: have it subtract the known dates for each entry and determine the jump
+                        from one date to the next. Example: 12/31/2022 - 12/10/2022 = 21 day 
+                        time jump
         */
         let upDate = new Date().toLocaleDateString();
         let day = this.state.dateSel.getDate();
-        let daysInMonth = this.getDaysInMonth(this.state.dateSel.getMonth()+1, this.state.dateSel.getFullYear());
-        console.log(daysInMonth);
+        let month = this.state.dateSel.getMonth();
+        let year = this.state.dateSel.getFullYear();
+        let daysInMonth = this.getDaysInMonth(month+1, year);
+        
         day += passDays;
         if (day < 1) {
-            day = this.getDaysInMonth(this.state.dateSel.getMonth()-1, this.state.dateSel.getFullYear());
-            upDate = this.state.dateSel.getMonth() + "/" + day + "/" + this.state.dateSel.getFullYear();
-            
-        } else if (day > 31) {
+            if (month <= 0) {
+                month = 11;
+                year--;
+            } else {
+                month--;
+            }
+            day = this.getDaysInMonth(month+1, year);  
+        } else if (day > daysInMonth) {
             day = 1;
-            upDate = (this.state.dateSel.getMonth()+2) + "/" + day + "/" +this.state.dateSel.getFullYear();
-        } else {
-            upDate = (this.state.dateSel.getMonth()+1) + "/" + day + "/" +this.state.dateSel.getFullYear();
+            if (month+1 > 11) {
+                month = 0;
+                year++;
+            } else {
+                month++;
+            }
+            upDate = (month+1) + "/" + day + "/" + year;
         }
-        console.log(upDate);
+        upDate = (month+1) + "/" + day + "/" + year;
         this.setState(state => ({
             dateSel: new Date(upDate)
         }));
@@ -41,17 +54,15 @@ class ChangeLog extends Component {
     render() {
         console.log("ChangeLog - Rendered");
 
-        //console.log(this.state.dateSel.toLocaleDateString());
-
         return ( 
             <table className={"changeLog"}> 
                 <thead>
                     <tr>
                         <th>
-                            <div onClick={() => this.daySelection(1)}>+</div>
+                            <div onClick={() => this.dateTraverse(1)}>+</div>
                         </th>
                         <th>
-                            <div onClick={() => this.daySelection(-1)}>-</div>
+                            <div onClick={() => this.dateTraverse(-1)}>-</div>
                         </th>
                         <th colSpan={2}>Changelog</th>
                         <th></th>
