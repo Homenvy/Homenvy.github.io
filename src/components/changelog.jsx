@@ -10,6 +10,7 @@ class ChangeLog extends Component {
         return new Date(year, month, 0).getDate();
     };
 
+    //traverse date over an amount of days
     dateTraverse = (passDays) => {
         /*TODO: Figure out how to display only known entries
                 Idea: have it subtract the known dates for each entry and determine the jump
@@ -47,6 +48,43 @@ class ChangeLog extends Component {
         }));
     };
 
+    //calculate how many days to jump from the current date to another entry
+    calcDateJump = (press) => {
+        const curDate = this.state.dateSel;
+        let closestDate = new Date(null);
+        let daysToJump = 0;
+        for (const item of CurrentEvents.currentEvents) {
+            if (item.isEnabled === "1") {
+                const itemDate = new Date(item.date);
+                if (press > 0) {
+                    if (itemDate > curDate) {
+                        if (!closestDate || (itemDate < closestDate))
+                            console.log(closestDate);
+                            closestDate = itemDate;
+                            console.log(closestDate); //here it returns 1969 date, it loses its sense of date somewhere               
+                        //daysToJump = closestDate - curDate; 
+                    }
+                } else if (press < 0) {
+                    if (itemDate < curDate) {
+                        if (!closestDate || (itemDate > closestDate))
+                            closestDate = itemDate;
+                        //daysToJump = curDate - closestDate; 
+                    }
+                } else
+                    if (!closestDate)
+                        closestDate = curDate; //figure out cases outside dates on json. 
+                    console.log("ERROR: Press should never be 0");
+            }
+        }
+        //below converts dates into miliseconds since Unix epoch and subtracts them then divides them by 1 days worth of miliseconds.
+        daysToJump = Math.floor((Date.parse(closestDate) - Date.parse(curDate))/86400000);
+        console.log(daysToJump + ", " + closestDate.toLocaleDateString());
+        // if (press > 0)
+        //     daysToJump = -daysToJump;
+        console.log("Days to skip: " + daysToJump);
+        return daysToJump;
+    }
+
     componentWillUnmount() {
         console.log("ChangeLog - Unmount");
     }
@@ -59,10 +97,10 @@ class ChangeLog extends Component {
                 <thead>
                     <tr>
                         <th>
-                            <div onClick={() => this.dateTraverse(1)}>+</div>
+                            <div onClick={() => this.dateTraverse(this.calcDateJump(1))}>+</div>
                         </th>
                         <th>
-                            <div onClick={() => this.dateTraverse(-1)}>-</div>
+                            <div onClick={() => this.dateTraverse(this.calcDateJump(-1))}>-</div>
                         </th>
                         <th colSpan={2}>Changelog</th>
                         <th></th>
@@ -93,7 +131,7 @@ class ChangeLog extends Component {
                 </tbody>
             </table>
         );
-  }
+    }
 }
 
 export default ChangeLog;

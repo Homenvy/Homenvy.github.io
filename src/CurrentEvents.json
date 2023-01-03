@@ -3,6 +3,12 @@
         {
             "isEnabled": "1",
             "name": "Changelog",
+            "date": "1/3/2023",
+            "desc": "Added a function that calculates days inbetween each entry. Function isnt fully completed."
+        },
+        {
+            "isEnabled": "1",
+            "name": "Changelog",
             "date": "12/10/2022",
             "desc": "Changelog has been added on Homepage.js. Each log will be represented in a json file. Added traversing through the changelog: this is basic but pressing the + or - will traverse the dates and what changes were on them. This is the first entry and will start from here. "
         },
@@ -15,8 +21,8 @@
         {
             "name": "About Me",
             "isEnabled": "0",
-            "desc": "I am thinking of putting my Portfolio and a resume-styled page in this.",
-            "route": "/aboutme"
+            "date": "12/3/2022",
+            "desc": "I am thinking of putting my Portfolio and a resume-styled page in this."  
         },
         {
             "isEnabled": "1",
