@@ -3,6 +3,12 @@
         {
             "isEnabled": "1",
             "name": "Changelog",
+            "date": "1/6/2023",
+            "desc": "Items in Changelog are now loaded and sorted. This was optimized for less resource consuption. Changelog displays correct information based on date. KNOWN ISSUE: going beyond the entries throws error."
+        },
+        {
+            "isEnabled": "1",
+            "name": "Changelog",
             "date": "1/3/2023",
             "desc": "Added a function that calculates days inbetween each entry. Function isnt fully completed."
         },
@@ -19,8 +25,8 @@
             "desc": "Small Discord widget added to the footer to show my discord server and the members connected to it. You can even see what game they are playing. Formatted to react on Hover and activate"
         },
         {
+            "isEnabled": "1",
             "name": "About Me",
-            "isEnabled": "0",
             "date": "12/3/2022",
             "desc": "I am thinking of putting my Portfolio and a resume-styled page in this."  
         },

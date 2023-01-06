@@ -1,88 +1,99 @@
+//import { array, object } from "prop-types";
 import React, { Component } from "react";
 import CurrentEvents from "../CurrentEvents.json";
 
 class ChangeLog extends Component {
+
     state = {
-        dateSel: new Date()
+        dateSel : new Date(),
+        dataList : [],
+        listIndex : 0
     };
 
-    getDaysInMonth = (month, year) => {
-        return new Date(year, month, 0).getDate();
-    };
+    //fill the list with information from an api
+    componentDidMount = () => {//just got the sorting to work, now to display it properly.
+        var newData = this.state.dataList;
+        let i = 0
 
-    //traverse date over an amount of days
-    dateTraverse = (passDays) => {
-        /*TODO: Figure out how to display only known entries
-                Idea: have it subtract the known dates for each entry and determine the jump
-                        from one date to the next. Example: 12/31/2022 - 12/10/2022 = 21 day 
-                        time jump
-        */
-        let upDate = new Date().toLocaleDateString();
-        let day = this.state.dateSel.getDate();
-        let month = this.state.dateSel.getMonth();
-        let year = this.state.dateSel.getFullYear();
-        let daysInMonth = this.getDaysInMonth(month+1, year);
-        
-        day += passDays;
-        if (day < 1) {
-            if (month <= 0) {
-                month = 11;
-                year--;
-            } else {
-                month--;
-            }
-            day = this.getDaysInMonth(month+1, year);  
-        } else if (day > daysInMonth) {
-            day = 1;
-            if (month+1 > 11) {
-                month = 0;
-                year++;
-            } else {
-                month++;
-            }
-            upDate = (month+1) + "/" + day + "/" + year;
-        }
-        upDate = (month+1) + "/" + day + "/" + year;
+        CurrentEvents.currentEvents.forEach(item => {
+            newData[i++] = item;
+        });
+
+        newData = this.sortList(newData);
+
+        const curDate = this.state.dataList[0].date;
+
         this.setState(state => ({
-            dateSel: new Date(upDate)
+            dataList : newData,
+            dateSel : new Date(curDate)
         }));
-    };
+    }
 
-    //calculate how many days to jump from the current date to another entry
-    calcDateJump = (press) => {
-        const curDate = this.state.dateSel;
-        let closestDate = new Date(null);
-        let daysToJump = 0;
-        for (const item of CurrentEvents.currentEvents) {
-            if (item.isEnabled === "1") {
-                const itemDate = new Date(item.date);
-                if (press > 0) {
-                    if (itemDate > curDate) {
-                        if (!closestDate || (itemDate < closestDate))
-                            console.log(closestDate);
-                            closestDate = itemDate;
-                            console.log(closestDate); //here it returns 1969 date, it loses its sense of date somewhere               
-                        //daysToJump = closestDate - curDate; 
-                    }
-                } else if (press < 0) {
-                    if (itemDate < curDate) {
-                        if (!closestDate || (itemDate > closestDate))
-                            closestDate = itemDate;
-                        //daysToJump = curDate - closestDate; 
-                    }
-                } else
-                    if (!closestDate)
-                        closestDate = curDate; //figure out cases outside dates on json. 
-                    console.log("ERROR: Press should never be 0");
+    //using mergesort to sort the list
+    sortList = (myList) => {
+        //Base case: if the list has 1 or less elements, its sorted.
+        if (myList.length <= 1) {
+            return myList;
+        }
+
+        //split the list into halves
+        const middle = Math.floor(myList.length / 2);
+        var left = myList.slice(0, middle);
+        var right = myList.slice(middle);
+
+        //sort the list recursively
+        left = this.sortList(left);
+        right = this.sortList(right);
+
+        //merge the sorted halves back into one
+        var result = [];
+        let leftIndex = 0, rightIndex = 0;
+        while (leftIndex < left.length && rightIndex < right.length) {
+            if (new Date(left[leftIndex].date) > new Date(right[rightIndex].date)) {
+                result.push(left[leftIndex]);
+                leftIndex++;
+            } else {
+                result.push(right[rightIndex]);
+                rightIndex++;
             }
         }
-        //below converts dates into miliseconds since Unix epoch and subtracts them then divides them by 1 days worth of miliseconds.
-        daysToJump = Math.floor((Date.parse(closestDate) - Date.parse(curDate))/86400000);
-        console.log(daysToJump + ", " + closestDate.toLocaleDateString());
-        // if (press > 0)
-        //     daysToJump = -daysToJump;
-        console.log("Days to skip: " + daysToJump);
-        return daysToJump;
+        result = result.concat(left.slice(leftIndex));
+        result = result.concat(right.slice(rightIndex));
+
+        return result;
+    }
+
+    //determines next available listed date and sets up the parameters for how the changelog displays information.
+    nextClosestDate = (press) => {
+        
+        const curDate = this.state.dateSel;
+        const tempList = this.state.dataList;
+        let curIndex = this.state.listIndex;
+
+        //TODO: handler for going beyond beginning and end and where it should be detected
+        //if multiple entries have the same date, skip them until dates differ.
+        if (curIndex >= 0 && curIndex < tempList.length) {
+            while (curDate.toLocaleDateString() === tempList[curIndex].date) {
+                if (press > 0)
+                    curIndex--;
+                else 
+                    curIndex++;
+            }
+        }
+        if (curDate.toLocaleDateString() !== tempList[curIndex].date && this.state.listIndex < tempList.length) {
+            this.setState(state => ({
+                listIndex : curIndex,
+                dateSel: new Date(tempList[curIndex].date),
+            }));
+        } else {
+            if (curIndex < 0) {
+                curIndex = 0;
+                console.log("End of list at index: " + curIndex);
+            } else if (curIndex >= tempList.length) {
+                curIndex = tempList.length-1;
+                console.log("Index at Beginning of list: " + curIndex);
+            }
+        }
     }
 
     componentWillUnmount() {
@@ -97,10 +108,10 @@ class ChangeLog extends Component {
                 <thead>
                     <tr>
                         <th>
-                            <div onClick={() => this.dateTraverse(this.calcDateJump(1))}>+</div>
+                            <div onClick={() => this.nextClosestDate(1)}>+</div>
                         </th>
                         <th>
-                            <div onClick={() => this.dateTraverse(this.calcDateJump(-1))}>-</div>
+                            <div onClick={() => this.nextClosestDate(-1)}>-</div>
                         </th>
                         <th colSpan={2}>Changelog</th>
                         <th></th>
@@ -112,21 +123,14 @@ class ChangeLog extends Component {
                         <td>{this.state.dateSel.toLocaleDateString()}</td>
                         <td colSpan={2}>Description</td>
                     </tr>
-                    {CurrentEvents.currentEvents.map((item, i) => (
-                        (item.isEnabled === "1")
-                        ? 
-                            (item.date === this.state.dateSel.toLocaleDateString())
-                            ?
-                            <tr key={item.name + item.date}>
+                    {this.state.dataList.map((item, i) => ( 
+                        (item.date === this.state.dateSel.toLocaleDateString() && item.isEnabled === "1") 
+                            ? <tr key={i}>
                                 <td colSpan={2}>{item.name}</td>
                                 <td colSpan={2}>{item.desc}</td>
-                            </tr>
-                            :
-                            <tr key={i}>
-                                <td colSpan={4}> </td>
                             </tr> 
-                        : 
-                            <tr key={i}></tr>
+                            : <tr key={i}>
+                            </tr>
                     ))}
                 </tbody>
             </table>
@@ -135,3 +139,81 @@ class ChangeLog extends Component {
 }
 
 export default ChangeLog;
+
+     //calculate how many days to jump from the current date to another entry
+     //FUNCTION DEPRECATED: however I would like to keep this function safe for now
+    // calcDateJump = (press) => {
+    //     const curDate = this.state.dateSel;
+    //     let closestDate = new Date(null);
+    //     let daysToJump = 0;
+    //     for (const item of CurrentEvents.currentEvents) {
+    //         if (item.isEnabled === "1") {
+    //             const itemDate = new Date(item.date);
+    //             if (press > 0) {
+    //                 if (itemDate > curDate) {
+    //                     if (!closestDate || (itemDate < closestDate))
+    //                         console.log(closestDate);
+    //                         closestDate = itemDate;
+    //                         console.log(closestDate); //TODO: here it returns 1969 date, it loses its sense of date somewhere               
+    //                     //daysToJump = closestDate - curDate; 
+    //                 }
+    //             } else if (press < 0) {
+    //                 if (itemDate < curDate) {
+    //                     if (!closestDate || (itemDate > closestDate))
+    //                         closestDate = itemDate;
+    //                     //daysToJump = curDate - closestDate; 
+    //                 }
+    //             } else
+    //                 if (!closestDate)
+    //                     closestDate = curDate; //TODO: figure out cases outside dates on json. 
+    //                 console.log("ERROR: Press should never be 0");
+    //         }
+    //     }
+    //     //below converts dates into miliseconds since Unix epoch and subtracts them then divides them by 1 days worth of miliseconds.
+    //     daysToJump = Math.floor((Date.parse(closestDate) - Date.parse(curDate))/86400000);
+    //     console.log(daysToJump + ", " + closestDate.toLocaleDateString());
+    //     // if (press > 0)
+    //     //     daysToJump = -daysToJump;
+    //     console.log("Days to skip: " + daysToJump);
+    //     return daysToJump;
+    // }
+
+    // FUNCTION DEPRECATED: used with other two commented functions. This just returns amount of days in a given month/year.
+    // getDaysInMonth = (month, year) => {
+    //     return new Date(year, month, 0).getDate();
+    // };
+
+    //traverse date over an amount of days
+    // FUNCTION DEPRECATED: more efficient function for intended use available, however want to keep code for potential later use.
+    // dateTraverse = (passDays) => {
+
+    //     let upDate = new Date().toLocaleDateString();
+    //     let day = this.state.dateSel.getDate();
+    //     let month = this.state.dateSel.getMonth();
+    //     let year = this.state.dateSel.getFullYear();
+    //     let daysInMonth = this.getDaysInMonth(month+1, year);
+        
+    //     day += passDays;
+    //     if (day < 1) {
+    //         if (month <= 0) {
+    //             month = 11;
+    //             year--;
+    //         } else {
+    //             month--;
+    //         }
+    //         day = this.getDaysInMonth(month+1, year);  
+    //     } else if (day > daysInMonth) {
+    //         day = 1;
+    //         if (month+1 > 11) {
+    //             month = 0;
+    //             year++;
+    //         } else {
+    //             month++;
+    //         }
+    //         upDate = (month+1) + "/" + day + "/" + year;
+    //     }
+    //     upDate = (month+1) + "/" + day + "/" + year;
+    //     this.setState(state => ({
+    //         dateSel: new Date(upDate)
+    //     }));
+    // };

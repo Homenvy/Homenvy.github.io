@@ -1,7 +1,5 @@
 import Banner from "../components/banner/banner";
 import ChangeLog from "../components/changelog";
-import CurrentEvents from "../CurrentEvents.json";
-import { Link } from "react-router-dom";
 
 const Home = (props) => {
     let theme = props.theme;
