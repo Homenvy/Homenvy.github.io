@@ -13,6 +13,10 @@ body {
     padding: 0;
 }
 
+iframe {
+    border-width: 0px;
+}
+
 a {
     color: #ddd;
     font-weight: 300;
@@ -517,13 +521,17 @@ a.signUp2:hover {
     header .content-wrapper {
         margin: 10px 0;
     }
+/*------------------------------FOOTER---------------------------------*/
 
 footer {
-    clear: both;
-    background-color: #fff;
     font-size: .8em;
-    height: 100px;
 }
+
+footer p {
+    text-align: center;
+    padding-top: 2.5%;
+}
+
 /* -----------------------------CHANGELOG----------------------------*/
 
 table.changeLog {
@@ -1468,11 +1476,11 @@ ul#menu2 {
 
     .featured .content-wrapper {
         background-color: #7ac0da;
-        background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+        background-image: -ms-linear-gradient(to left, #7ac0da 0%, #a4d4e6 100%);
+        background-image: -o-linear-gradient(to left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -webkit-linear-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
-        background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+        background-image: -webkit-linear-gradient(to left, #7ac0da 0%, #a4d4e6 100%);
+        background-image: linear-gradient(to left, #7ac0da 0%, #a4d4e6 100%);
         color: #3e5667;
         padding: 20px 40px 30px 40px;
     }

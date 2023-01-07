@@ -1,5 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
-import { ReactDOM } from "react-dom/client";
+import React, { Component} from "react";
 
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -11,10 +10,11 @@ import NoPage from "./pages/NoPage";
 import AboutMe from "./pages/AboutMe";
 import Service from "./pages/Service";
 import Resume from "./pages/Resume";
+import Cookies from 'js-cookie';
 
 class App extends Component {
   state = {
-    theme: "light",
+    theme: (Cookies.get('theme') ? Cookies.get('theme') : 'light'),
     activePage: "Project Zeal"
   };
 
@@ -26,15 +26,20 @@ class App extends Component {
     //this.state = this.props.something;
   }
 
+  saveThemeCookie(theme) {
+    Cookies.set('theme', theme, 365);
+    return theme;
+  }
+  
   toggleTheme = () => {
-    //TODO: Implement cookies to remember option
     //TODO: By default theme should mirror state of day
     this.setState(state => ({
       theme:
        state.theme === "light"
-        ? state.theme = "dark"
-        : state.theme = "light"
-    }));    
+        ? state.theme = this.saveThemeCookie("dark")
+        : state.theme = this.saveThemeCookie("light")
+    }));
+    console.log(this.state.theme);
   };
 
   componentDidMount() {

@@ -20,8 +20,9 @@ class ChangeLog extends Component {
         });
 
         newData = this.sortList(newData);
+        newData = this.enabledFilter(newData);
 
-        const curDate = this.state.dataList[0].date;
+        const curDate = newData[0].date;
 
         this.setState(state => ({
             dataList : newData,
@@ -63,36 +64,44 @@ class ChangeLog extends Component {
         return result;
     }
 
-    //determines next available listed date and sets up the parameters for how the changelog displays information.
+    //filter out entries not enabled
+    enabledFilter = (myList) => {
+        for(let i = 0; i < myList.length; i++) {
+            var item = myList[i];
+            if (item.isEnabled === "0") {
+                myList.splice(i, 1);
+            }
+        }
+        return myList;
+    }
+
+    //determines next available listed date and sets up the parameters for how the changelog displays information
     nextClosestDate = (press) => {
         
         const curDate = this.state.dateSel;
         const tempList = this.state.dataList;
         let curIndex = this.state.listIndex;
 
-        //TODO: handler for going beyond beginning and end and where it should be detected
-        //if multiple entries have the same date, skip them until dates differ.
-        if (curIndex >= 0 && curIndex < tempList.length) {
-            while (curDate.toLocaleDateString() === tempList[curIndex].date) {
-                if (press > 0)
-                    curIndex--;
-                else 
-                    curIndex++;
-            }
+        //index should reflect the pressed button
+        (press > 0) ? --curIndex : ++curIndex;
+        //TODO: Below logic has the changelog acting weird
+        //check if index is out of bounds
+        if (curIndex <= 0)
+            curIndex = tempList.length-1;
+        else if (curIndex >= tempList.length)
+            curIndex = 0;
+
+        //cycle past entries with the same date
+        while (curDate.toLocaleDateString() === tempList[curIndex].date && curIndex > 0 && curIndex < tempList.length) {
+            (press > 0) ? --curIndex : ++curIndex;
         }
-        if (curDate.toLocaleDateString() !== tempList[curIndex].date && this.state.listIndex < tempList.length) {
+
+        //compares dates before updating state for next iteration
+        if (curDate.toLocaleDateString() !== tempList[curIndex].date && curIndex < tempList.length) {
             this.setState(state => ({
                 listIndex : curIndex,
                 dateSel: new Date(tempList[curIndex].date),
             }));
-        } else {
-            if (curIndex < 0) {
-                curIndex = 0;
-                console.log("End of list at index: " + curIndex);
-            } else if (curIndex >= tempList.length) {
-                curIndex = tempList.length-1;
-                console.log("Index at Beginning of list: " + curIndex);
-            }
         }
     }
 
@@ -124,13 +133,12 @@ class ChangeLog extends Component {
                         <td colSpan={2}>Description</td>
                     </tr>
                     {this.state.dataList.map((item, i) => ( 
-                        (item.date === this.state.dateSel.toLocaleDateString() && item.isEnabled === "1") 
+                        (item.date === this.state.dateSel.toLocaleDateString()) 
                             ? <tr key={i}>
                                 <td colSpan={2}>{item.name}</td>
                                 <td colSpan={2}>{item.desc}</td>
                             </tr> 
-                            : <tr key={i}>
-                            </tr>
+                            : <tr key={i}></tr>
                     ))}
                 </tbody>
             </table>

@@ -55,6 +55,7 @@ class Social extends Component {
                         alt={item.name}
                         style={{"--clr": item.color}}
                         target="_blank"
+                        rel="noreferrer"
                         >
                         </a>
                     : <div></div>

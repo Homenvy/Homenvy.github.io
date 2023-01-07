@@ -2,12 +2,21 @@ import React, { Component } from "react";
 import Socials from "./socials";
 import AccountInteraction from "./accountInteraction";
 import AppRoutes from "../Routes.json";
-import { Link, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 
 class NavBar extends Component {
 // Stateless Functional Component (shortcut sfc)
 // totalCounters not used, was used previously for shopping cart.
 // const NavBar = ({ totalCounters }) => {
+
+  componentDidMount() {
+    console.log("NavBar - Mounted");
+    if (Cookies.get('theme') === "dark") {
+      console.log("test successful");
+      document.getElementById("themeButton").checked = true;
+    }
+  }
   
   render() {
     
@@ -33,6 +42,7 @@ class NavBar extends Component {
                   <input
                     type="checkbox"
                     onClick={() => this.props.toggleTheme()}
+                    id="themeButton"
                   />
                   <span className="slider round"></span>
                 </label>

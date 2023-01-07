@@ -2,6 +2,30 @@
     "currentEvents" : [
         {
             "isEnabled": "1",
+            "name": "Theme",
+            "date": "1/7/2023",
+            "desc": "Theme will now remember which theme you selected. First timers will experience light theme."
+        },
+        {
+            "isEnabled": "1",
+            "name": "Security",
+            "date": "1/6/2023",
+            "desc": "Added some security to how the pages handle events."
+        },
+        {
+            "isEnabled": "0",
+            "name": "Changelog",
+            "date": "1/6/2023",
+            "desc": "You will never see this while isEnabled is set to 0."
+        },
+        {
+            "isEnabled": "1",
+            "name": "Changelog",
+            "date": "1/6/2023",
+            "desc": "Added a filter that removes items in the list that aren't enabled"
+        },
+        {
+            "isEnabled": "1",
             "name": "Changelog",
             "date": "1/6/2023",
             "desc": "Items in Changelog are now loaded and sorted. This was optimized for less resource consuption. Changelog displays correct information based on date. KNOWN ISSUE: going beyond the entries throws error."
@@ -25,7 +49,7 @@
             "desc": "Small Discord widget added to the footer to show my discord server and the members connected to it. You can even see what game they are playing. Formatted to react on Hover and activate"
         },
         {
-            "isEnabled": "1",
+            "isEnabled": "0",
             "name": "About Me",
             "date": "12/3/2022",
             "desc": "I am thinking of putting my Portfolio and a resume-styled page in this."  

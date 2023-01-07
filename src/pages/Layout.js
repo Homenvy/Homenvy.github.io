@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { ReactDOM } from "react-dom/client";
+import React, { useState } from "react";
+//import { ReactDOM } from "react-dom/client";
 
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import NavBar from "../components/navbar";
 import Footer from "../components/footer";
 
