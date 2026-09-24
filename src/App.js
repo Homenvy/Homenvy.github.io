@@ -1,10 +1,11 @@
 import React, { Component} from "react";
 
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
+import ProjectDetail from "./pages/ProjectDetail";
 import Contact from "./pages/Contact";
 import NoPage from "./pages/NoPage";
 import AboutMe from "./pages/AboutMe";
@@ -50,7 +51,7 @@ class App extends Component {
     return (
       <>
         <React.Fragment>
-          <BrowserRouter>
+          <HashRouter>
             <Routes>
                 <Route path="/" element={<Layout theme={this.state.theme} 
                                             activePage={this.state.activePage}
@@ -58,6 +59,7 @@ class App extends Component {
                                           />}>
                     <Route index element={<Home theme={this.state.theme}/>} />
                     <Route path="portfolio" element={<Portfolio />}/>
+                    <Route path="portfolio/:slug" element={<ProjectDetail />}/>
                     <Route path="contact" element={<Contact />}/>
                     <Route path="aboutme" element={<AboutMe />}/>
                     <Route path="service" element={<Service />}/>
@@ -65,7 +67,7 @@ class App extends Component {
                     <Route path="*" element={<NoPage />} />
                 </Route>
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
           {/* <main className="container">
             <Counters
               counters={this.state.counters}

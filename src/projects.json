@@ -1,0 +1,176 @@
+[
+  {
+    "slug": "vegas-tcg-exchange",
+    "title": "Vegas TCG Exchange",
+    "category": "Community / Event web",
+    "number": "01",
+    "summary": "From discovering an event to reserving a place at the table.",
+    "description": "An event website for a Las Vegas trading-card community, bringing event information, vendor reservations, and registration into a focused web experience.",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Stripe payment links"
+    ],
+    "challenge": "Give visitors practical event information while making the vendor reservation journey easy to follow.",
+    "approach": "An event countdown, venue details, and expandable vendor guidance lead toward a Stripe payment link and a separate registration page.",
+    "features": [
+      [
+        "Event information",
+        "Dates, venue directions, and a countdown bring key details together."
+      ],
+      [
+        "Vendor journey",
+        "A payment-link reservation flow leads vendors toward registration."
+      ],
+      [
+        "Expandable guidance",
+        "Accordion sections organize vendor rules and practical details."
+      ]
+    ],
+    "next": "Continue refining content, motion, and the steps a visitor needs to complete.",
+    "source": "https://github.com/Homenvy/VegasTCGExchange",
+    "kind": "cards"
+  },
+  {
+    "slug": "inventory-management",
+    "title": "Inventory Management System",
+    "category": "Operations / Web application",
+    "number": "02",
+    "summary": "Equipment, its status, and its next action in view.",
+    "description": "A browser-based inventory interface organizing equipment records, assignment workflows, scanning, and reporting. Presented without organizational branding or operational records.",
+    "stack": [
+      "JavaScript",
+      "CSS",
+      "JSON",
+      "QR scanning"
+    ],
+    "challenge": "Move efficiently between finding an asset, understanding its status, and carrying out the next operation.",
+    "approach": "Dashboard summaries connect to asset views and modal workflows. Orbital navigation provides another way to reach common actions.",
+    "features": [
+      [
+        "Asset workflows",
+        "Dedicated interfaces handle asset details, assignment, unassignment, and check-in."
+      ],
+      [
+        "Scan and identify",
+        "Camera-based QR scanning, manual lookup, and printable QR labels connect the interface to physical equipment."
+      ],
+      [
+        "Reporting",
+        "Status and category breakdowns, recent updates, attention indicators, and JSON export support review."
+      ],
+      [
+        "Interaction design",
+        "Theme switching, role-dependent interface controls, and orbital navigation organize the experience."
+      ]
+    ],
+    "next": "Explore individually timed modal transitions and expandable content, with measured performance and accessible alternatives.",
+    "kind": "inventory"
+  },
+  {
+    "slug": "project-eclipse",
+    "title": "Project Eclipse",
+    "category": "Game development / Systems & animation",
+    "number": "03",
+    "summary": "A tactical world, built from interconnected systems.",
+    "description": "An ongoing game project exploring procedural dungeons, directional combat, and expressive boss encounters. Development combines gameplay iteration, original encounter direction, and asset-performance work.",
+    "stack": [
+      "TypeScript",
+      "React",
+      "Procedural generation",
+      "Sprite animation"
+    ],
+    "challenge": "Bring complex encounters and animated characters into a playable world while keeping asset costs and frame-time spikes under control.",
+    "approach": "Work proceeds in playable passes: test a dungeon or encounter, inspect behavior and performance, then refine the relevant system. Chorrona connects a spellcaster design to creature-driven attacks, directional damage, and front/rear animation views.",
+    "features": [
+      [
+        "Procedural spaces",
+        "Room variations, multiple floors, stairs, and minimaps shape dungeon exploration."
+      ],
+      [
+        "Chorrona encounter",
+        "A mouth becomes a scythe, a scarf becomes a sword, and a doll participates in spellcasting. Animation communicates each ability."
+      ],
+      [
+        "Asset pipeline",
+        "The project is moving animations toward 30 stored keyframes per second with interpolation toward 60fps playback, preserving transparency and consistent sprite scale."
+      ],
+      [
+        "Performance iteration",
+        "Caching, selective asset loading, and measured playtests guide ongoing work on stutters and visual quality."
+      ]
+    ],
+    "next": "Continue refining attack animation quality and frame pacing. Performance optimization is ongoing; smooth playback is a target rather than a completed claim.",
+    "kind": "eclipse"
+  },
+  {
+    "slug": "charging-animation",
+    "title": "Gatoru Charging Animation",
+    "category": "Motion design / Phone concept",
+    "number": "04",
+    "summary": "A charging state turned into a small animated scene.",
+    "description": "An animated phone-charging concept combining a floating character, a purple vortex, outward-moving ripples, and upward-flowing energy. The scene is developed as separate visual layers and assembled through successive animation passes.",
+    "stack": [
+      "Keyframe animation",
+      "Interpolation",
+      "Transparent assets",
+      "Video & GIF previews"
+    ],
+    "challenge": "Make the scene communicate energy being drawn upward while keeping its different motions aligned, readable, and consistent.",
+    "approach": "Approve individual components before combining them. The vortex rotates slowly outside and accelerates inward; an enlarged core leaves room for a separate charge-percentage overlay. Ripples travel outward from the lower light source while energy moves toward the vortex.",
+    "features": [
+      [
+        "Layered motion",
+        "Character movement, vortex activity, water-like waves, and energy paths are refined independently."
+      ],
+      [
+        "Motion direction",
+        "Inward spirals and outward ripples establish clear, complementary directions."
+      ],
+      [
+        "Frame alignment",
+        "Keyframes and interpolation are evaluated for smooth motion, alignment, and unwanted stretching."
+      ],
+      [
+        "Delivery formats",
+        "Transparent assets and animated previews support compositing and visual review."
+      ]
+    ],
+    "next": "Refine individual hair clumps and bandana-tail motion. Device integration and a live battery-percentage overlay remain separate from the animation prototype.",
+    "kind": "motion"
+  },
+  {
+    "slug": "project-zeal",
+    "title": "Project Zeal",
+    "category": "Personal / Portfolio platform",
+    "number": "05",
+    "summary": "A home for the work, and the thinking that connects it.",
+    "description": "A personal React website connecting software, infrastructure, community projects, and visual experimentation. The root site presents the wider Project Zeal collection.",
+    "stack": [
+      "React",
+      "React Router",
+      "CSS",
+      "GitHub Pages"
+    ],
+    "challenge": "Give different kinds of work enough context to stand on their own while keeping them part of one portfolio.",
+    "approach": "The existing animated floating-island identity and theme switcher are paired with a gallery and dedicated case-study routes. Structured project data lets the collection grow.",
+    "features": [
+      [
+        "Project pages",
+        "Each project has its own purpose, approach, capabilities, and next direction."
+      ],
+      [
+        "Visual identity",
+        "The site builds on its floating-island banner and light/dark theme."
+      ],
+      [
+        "Expandable stories",
+        "Native disclosure controls support pointer and keyboard interaction."
+      ]
+    ],
+    "next": "Expand the collection with further projects and original demonstrations as source material becomes available.",
+    "source": "https://github.com/Homenvy/Homenvy.github.io",
+    "kind": "zeal"
+  }
+]
