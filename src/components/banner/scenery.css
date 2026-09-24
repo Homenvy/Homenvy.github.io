@@ -4,7 +4,11 @@
 .zeal-banner #nuuStruct{left:265px;bottom:200px;--float-x:5px;--float-y:13px;--float-duration:9s;--float-delay:-5s}
 .zeal-banner #enhasa{right:-50px;bottom:0;--float-x:-5px;--float-y:11px;--float-duration:8.5s;--float-delay:-2s}
 .zeal-banner #blackBird{bottom:210px;--float-x:2px;--float-y:9px;--float-duration:7s;--float-delay:-1s}
-body[data-scenery-motion] .zeal-banner :is(#zealPalace,#sunShrine,#nuuStruct,#enhasa,#blackBird){animation:scenery-float var(--float-duration) ease-in-out var(--float-delay) infinite!important;will-change:transform}
+body[data-scenery-motion] .zeal-banner :is(#zealPalace,#sunShrine,#nuuStruct,#enhasa,#blackBird){animation:none!important;image-rendering:pixelated;will-change:auto}
+.zeal-banner #blackBird{padding:0;border:0;background-color:transparent;cursor:pointer;left:0}
+.zeal-banner #blackBird:focus-visible{outline:2px solid white;outline-offset:5px}
+.zeal-banner .blackbird-flight{position:absolute;left:0;top:0;z-index:6000;pointer-events:none;image-rendering:pixelated}
+.zeal-banner{overflow:hidden}
 body[data-scenery-motion] #clouds,body[data-scenery-motion] #cloud{left:0;animation:scenery-cloud-drift 8s linear infinite!important;will-change:transform}
 body[data-scenery-motion] .portfolio-cloud-field:before{left:0;animation:scenery-cloud-drift 8s linear infinite!important;will-change:transform}
 @keyframes scenery-float{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(var(--float-x),var(--float-y),0)}}
