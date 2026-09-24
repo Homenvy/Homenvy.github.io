@@ -1,8 +1,27 @@
 import React, { Component } from "react";
 import './animations.css';
+import './scenery.css';
+
+function initialMotion() {
+    try {
+        const saved = window.localStorage.getItem('zeal-scenery-motion');
+        if (saved !== null) return saved === 'on';
+    } catch (_) {}
+    return !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
 
 class Banner extends Component {
-    state = { timeOfDay: this.lightOfDay() };
+    state = { timeOfDay: this.lightOfDay(), motion: initialMotion() };
+
+    toggleMotion = () => {
+        this.setState(state => ({ motion: !state.motion }), () => {
+            try { window.localStorage.setItem('zeal-scenery-motion', this.state.motion ? 'on' : 'off'); } catch (_) {}
+        });
+    };
+
+    componentDidUpdate() {
+        document.body.dataset.sceneryMotion = this.state.motion ? 'on' : 'off';
+    }
 
     updateTimeOfDay = () => {
         const timeOfDay = this.lightOfDay();
@@ -10,11 +29,13 @@ class Banner extends Component {
     };
 
     componentDidMount() {
+        document.body.dataset.sceneryMotion = this.state.motion ? 'on' : 'off';
         this.clock = window.setInterval(this.updateTimeOfDay, 60000);
         window.addEventListener('focus', this.updateTimeOfDay);
     }
 
     componentWillUnmount() {
+        delete document.body.dataset.sceneryMotion;
         window.clearInterval(this.clock);
         window.removeEventListener('focus', this.updateTimeOfDay);
     }
@@ -26,6 +47,10 @@ class Banner extends Component {
         const lightSource = this.findLightSource(timeOfDay);
         return (
             <div className="relCanvas zeal-banner" data-time-of-day={timeOfDay} style={{backgroundColor: 'blue'}}>
+                <button className="scenery-motion-toggle" type="button" onClick={this.toggleMotion}
+                    aria-pressed={this.state.motion} aria-label="Animate scenery">
+                    {this.state.motion ? 'Pause scenery' : 'Play scenery'}
+                </button>
                 <div className={timeOfDay}>
                     <div id={lightSource}></div>   
                 </div>
