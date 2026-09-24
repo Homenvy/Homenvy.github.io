@@ -1,0 +1,18 @@
+/* Move composited layers, keeping the original island arrangement. */
+.zeal-banner #zealPalace{bottom:0;--float-x:3px;--float-y:14px;--float-duration:7s;--float-delay:-1s}
+.zeal-banner #sunShrine{left:-60px;bottom:50px;--float-x:-6px;--float-y:-12px;--float-duration:8s;--float-delay:-3s}
+.zeal-banner #nuuStruct{left:265px;bottom:200px;--float-x:5px;--float-y:13px;--float-duration:9s;--float-delay:-5s}
+.zeal-banner #enhasa{right:-50px;bottom:0;--float-x:-5px;--float-y:11px;--float-duration:8.5s;--float-delay:-2s}
+.zeal-banner #blackBird{bottom:210px;--float-x:2px;--float-y:9px;--float-duration:7s;--float-delay:-1s}
+body[data-scenery-motion] .zeal-banner :is(#zealPalace,#sunShrine,#nuuStruct,#enhasa,#blackBird){animation:scenery-float var(--float-duration) ease-in-out var(--float-delay) infinite!important;will-change:transform}
+body[data-scenery-motion] #clouds,body[data-scenery-motion] #cloud{left:0;animation:scenery-cloud-drift 8s linear infinite!important;will-change:transform}
+body[data-scenery-motion] .portfolio-cloud-field:before{left:0;animation:scenery-cloud-drift 8s linear infinite!important;will-change:transform}
+@keyframes scenery-float{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(var(--float-x),var(--float-y),0)}}
+/* Exactly one 64px texture tile, so the reset is visually seamless. */
+@keyframes scenery-cloud-drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(64px,0,0)}}
+body[data-scenery-motion='off'] .zeal-banner :is(#zealPalace,#sunShrine,#nuuStruct,#enhasa,#blackBird),body[data-scenery-motion='off'] #clouds,body[data-scenery-motion='off'] #cloud,body[data-scenery-motion='off'] .portfolio-cloud-field:before{animation-play-state:paused!important;will-change:auto}
+body[data-scenery-motion='off'] .destination-island,body[data-scenery-motion='off'] .destination-clouds{animation-play-state:paused!important}
+body[data-scenery-motion='off'] .zeal-banner :is(.night,.dawn){background-image:none}
+body[data-scenery-motion='on'] .zeal-banner :is(.night,.dawn){background-image:url('../../../public/img/banner/BannerNight.gif')}
+.zeal-banner .scenery-motion-toggle{position:absolute;z-index:3000;right:18px;bottom:18px;padding:8px 14px;border:1px solid #ead5a6;border-radius:20px;background:#17243de8;color:#fff;font-size:12px;line-height:1.4;cursor:pointer;box-shadow:0 2px 8px #0003}
+.zeal-banner .scenery-motion-toggle:focus-visible{outline:3px solid #fff;outline-offset:3px}
