@@ -81,3 +81,11 @@ body:has(.portfolio-shell) .disWidget{position:relative;display:block;margin:0 a
  .portfolio-cloud-field:before,.zeal-banner *{animation:none!important}
  .zeal-banner .night,.zeal-banner .dawn{background-image:none}
 }
+
+/* Actual project captures and approved character animation previews. */
+.portfolio-shell .project-media{background:#101724;padding:0;isolation:isolate}
+.portfolio-shell .project-media>img,.portfolio-shell .project-media>video{display:block;width:100%;height:100%;object-fit:cover;object-position:top;transform:none;filter:none}
+.portfolio-shell .project-media.art-eclipse{background:#fff}
+.portfolio-shell .project-media.art-motion{background:#000}
+.portfolio-shell .project-media.art-eclipse>video,.portfolio-shell .project-media.art-motion>video{object-fit:contain;object-position:center;padding-bottom:32px;box-sizing:border-box}
+.portfolio-shell .project-media>span{position:absolute;left:0;right:0;bottom:0;padding:10px 14px;background:#101724eb;color:#f7e9cc;font-size:11px;letter-spacing:.08em;z-index:2}
