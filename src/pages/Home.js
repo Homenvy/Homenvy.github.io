@@ -8,11 +8,11 @@ const Home = (props) => {
     return (
       <>
         <Banner />
-        <Link className="portfolio-home-link" to="/portfolio">Explore the project portfolio →</Link>
         <div className={"contentContainer"}>
           <div id="cloud" />
             <div style={{height: "0px"}}>
               <div className={"contentCanvas indexCanvas " + theme}>
+                <Link className="zeal-portfolio-gateway" to="/portfolio"><img src="/img/banner/EnhasaZeal.png" alt="" /><span><small>THE PROJECT ZEAL COLLECTION</small><strong>Explore the projects</strong><span>Games, interactive experiences & practical systems</span></span><b aria-hidden="true">→</b></Link>
                 <p>You must be wondering, "What is this site?". I have started setting up this site in REACT for multiple
                   reasons. I originally was using MVC4 asp .net framework but as I looked at multiple job positions I 
                   became aware that React was a more popular framework. Since I had some experience in React I figured 
