@@ -2,13 +2,30 @@ import React, { Component } from "react";
 import './animations.css';
 
 class Banner extends Component {
+    state = { timeOfDay: this.lightOfDay() };
+
+    updateTimeOfDay = () => {
+        const timeOfDay = this.lightOfDay();
+        if (timeOfDay !== this.state.timeOfDay) this.setState({ timeOfDay });
+    };
+
+    componentDidMount() {
+        this.clock = window.setInterval(this.updateTimeOfDay, 60000);
+        window.addEventListener('focus', this.updateTimeOfDay);
+    }
+
+    componentWillUnmount() {
+        window.clearInterval(this.clock);
+        window.removeEventListener('focus', this.updateTimeOfDay);
+    }
+
 
     render() {
         console.log("Banner Rendered");
-        const timeOfDay = this.lightOfDay();
+        const timeOfDay = this.state.timeOfDay;
         const lightSource = this.findLightSource(timeOfDay);
         return (
-            <div className="relCanvas" style={{backgroundColor: 'blue'}}>
+            <div className="relCanvas zeal-banner" data-time-of-day={timeOfDay} style={{backgroundColor: 'blue'}}>
                 <div className={timeOfDay}>
                     <div id={lightSource}></div>   
                 </div>

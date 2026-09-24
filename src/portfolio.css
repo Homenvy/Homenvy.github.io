@@ -3,16 +3,16 @@ body:has(.portfolio-shell){min-width:0}
 .portfolio-shell{--ink:#302634;--muted:#615469;--surface:#fffffff5;--line:#c6b19d;--accent:#763046;color:var(--ink);font-size:16px;line-height:1.7;min-height:100vh;background:linear-gradient(#98b6d233,#dbe7f36b),url('../public/img/banner/BannerCloud.png') repeat;padding-bottom:70px}
 body.dark .portfolio-shell{--ink:#f4e8dc;--muted:#c7bdce;--surface:#222735f5;--line:#7b6b79;--accent:#f0cc81;background:linear-gradient(#11162dcc,#182033b3),url('../public/img/banner/BannerCloud.png') repeat}
 .portfolio-content{max-width:1160px;margin:0 auto;padding:0 32px}
-.portfolio-sky{height:440px;position:relative;overflow:hidden;isolation:isolate;background:linear-gradient(#16233c,#587caa 68%,#9cb3ce)}
-body.dark .portfolio-sky{background:linear-gradient(#090d1d,#222043 70%,#566488)}
-.sky-stars,.destination-stars{position:absolute;inset:0;background-image:radial-gradient(circle at 12% 22%,#fff 0 1px,transparent 2px),radial-gradient(circle at 82% 14%,#ead09c 0 1px,transparent 2px),radial-gradient(circle at 64% 56%,#d4b6ff 0 1px,transparent 2px);background-size:173px 149px,211px 183px,137px 127px;opacity:.7}
-.sky-logo{position:absolute;width:290px;left:max(6%,calc((100% - 1040px)/2));top:28px;filter:drop-shadow(0 0 5px #fff8)}
-.sky-islands{position:absolute;width:490px;height:370px;left:54%;top:12px}
-.sky-islands img,.destination-island{position:absolute;object-fit:contain;image-rendering:pixelated;animation:zeal-float 7s ease-in-out infinite}
-.sky-palace{width:235px;left:85px;top:10px}.sky-shrine{width:85px;left:350px;top:60px;animation-delay:-2s!important}.sky-enhasa{width:110px;left:0;top:200px;animation-delay:-4s!important}
-.sky-clouds,.destination-clouds{position:absolute;inset:auto -60px -60px;height:190px;background:url('../public/img/banner/BannerClouds.png') repeat-x;background-size:auto 230px;pointer-events:none;opacity:.8;animation:zeal-clouds 18s ease-in-out infinite alternate}
-body.dark .sky-clouds,body.dark .destination-clouds{filter:brightness(.55) saturate(.65)}
-.sky-caption{position:absolute;bottom:26px;left:0;right:0;text-align:center;color:#fff;letter-spacing:.24em;font-size:11px;text-shadow:0 2px 6px #13283f}
+
+
+.destination-stars{position:absolute;inset:0;background-image:radial-gradient(circle at 12% 22%,#fff 0 1px,transparent 2px),radial-gradient(circle at 82% 14%,#ead09c 0 1px,transparent 2px),radial-gradient(circle at 64% 56%,#d4b6ff 0 1px,transparent 2px);background-size:173px 149px,211px 183px,137px 127px;opacity:.7}
+
+
+.destination-island{position:absolute;object-fit:contain;image-rendering:pixelated;animation:zeal-float 7s ease-in-out infinite}
+
+.destination-clouds{position:absolute;inset:auto -60px -60px;height:190px;background:url('../public/img/banner/BannerClouds.png') repeat-x;background-size:auto 230px;pointer-events:none;opacity:.8;animation:zeal-clouds 18s ease-in-out infinite alternate}
+body.dark .destination-clouds{filter:brightness(.55) saturate(.65)}
+
 .portfolio-intro{position:relative;margin:32px 0 30px;padding:30px 36px;text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 28px #10223825}
 .portfolio-shell h1,.portfolio-shell h2{color:var(--ink);font-family:Georgia,'Times New Roman',serif}
 .portfolio-shell h1{font-size:clamp(34px,5vw,58px);line-height:1.12;font-weight:400;letter-spacing:-.025em;margin:12px 0 20px}
@@ -40,7 +40,7 @@ body.dark .sky-clouds,body.dark .destination-clouds{filter:brightness(.55) satur
 .zeal-portfolio-gateway{display:flex;align-items:center;gap:22px;margin:6px 0 22px;padding:18px 24px;border:1px solid #ac8e61;border-radius:12px;background:linear-gradient(110deg,#ede6f5,#faf3e6);color:#642b40!important;text-decoration:none!important;box-shadow:inset 0 0 0 4px #ffffff70;transition:box-shadow .25s,transform .25s}
 .zeal-portfolio-gateway:hover{transform:translateY(-2px);box-shadow:0 5px 20px #5f4a7030,inset 0 0 0 4px #ffffff70}.zeal-portfolio-gateway img{width:62px;height:70px;object-fit:contain;image-rendering:pixelated}.zeal-portfolio-gateway>span{display:grid;gap:3px}.zeal-portfolio-gateway small{font-size:10px;letter-spacing:.17em}.zeal-portfolio-gateway strong{font:28px Georgia,serif}.zeal-portfolio-gateway>span>span{font-size:13px}.zeal-portfolio-gateway>b{margin-left:auto;font-size:26px}.zeal-portfolio-gateway:focus-visible{outline:3px solid #ac8e61;outline-offset:3px}body.dark .zeal-portfolio-gateway{background:linear-gradient(110deg,#29253c,#34303e);color:#f0d39b!important;box-shadow:inset 0 0 0 4px #dcb67812}
 @keyframes zeal-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}@keyframes zeal-clouds{from{transform:translateX(-20px)}to{transform:translateX(20px)}}@keyframes zeal-reveal{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:700px){.portfolio-content{padding:0 16px}.portfolio-sky{height:340px}.sky-logo{width:175px;left:18px;top:22px}.sky-islands{left:43%;top:72px;transform:scale(.65);transform-origin:top left}.sky-caption{font-size:8px;letter-spacing:.16em;bottom:18px}.portfolio-intro{padding:24px 20px;margin:20px 0}.portfolio-lead{font-size:18px}.project-grid,.detail-columns{grid-template-columns:1fr;gap:22px}.project-card:last-child{display:block;grid-column:auto}.project-card-copy{padding:24px}.portfolio-note{padding:26px 24px}.project-detail{padding:18px 12px 45px}.project-detail .portfolio-content{padding:22px 20px}.detail-intro h1{font-size:36px;overflow-wrap:anywhere}.project-detail .project-art{height:260px}.zeal-portfolio-gateway{gap:12px;padding:14px}.zeal-portfolio-gateway strong{font-size:23px}}
+@media(max-width:700px){.portfolio-content{padding:0 16px}.portfolio-intro{padding:24px 20px;margin:20px 0}.portfolio-lead{font-size:18px}.project-grid,.detail-columns{grid-template-columns:1fr;gap:22px}.project-card:last-child{display:block;grid-column:auto}.project-card-copy{padding:24px}.portfolio-note{padding:26px 24px}.project-detail{padding:18px 12px 45px}.project-detail .portfolio-content{padding:22px 20px}.detail-intro h1{font-size:36px;overflow-wrap:anywhere}.project-detail .project-art{height:260px}.zeal-portfolio-gateway{gap:12px;padding:14px}.zeal-portfolio-gateway strong{font-size:23px}}
 @media(prefers-reduced-motion:reduce){.portfolio-shell *,.zeal-portfolio-gateway{animation:none!important;transition:none!important}.project-card:hover,.zeal-portfolio-gateway:hover{transform:none}}
 /* Explicit navigation state supports touch, keyboard, and deep links. */
 .navLinkContainer.site-menu{overflow:visible;position:relative}
@@ -57,6 +57,27 @@ body:has(.portfolio-shell) .disWidget{position:relative;display:block;margin:0 a
 .switch:focus-within{outline:2px solid #a97d2e;outline-offset:4px}
 .radar-toggle .switch{width:48px;flex-shrink:0}
 .portfolio-note h2,.portfolio-note p{text-align:left}
-.sky-caption{bottom:22px;left:50%;right:auto;transform:translateX(-50%);width:max-content;max-width:94%;padding:7px 15px;border:1px solid #e6d0a650;border-radius:20px;background:#17233fc9}
+
 .project-art>span{text-shadow:0 1px 3px #000,0 0 8px #152039;background:#152039a8;padding:4px 8px;border-radius:4px;width:max-content;max-width:92%;margin:0 auto}
-@media(max-width:700px){.sky-islands{left:40%;transform:scale(.52)}.sky-shrine{left:275px}}
+
+/* Shared home-page scenery: time-of-day selection and original island keyframes. */
+.portfolio-shell,body.dark .portfolio-shell{background:none;padding-bottom:0}
+.portfolio-shell .zeal-banner{height:500px;overflow:hidden;isolation:isolate}
+.portfolio-shell .zeal-banner .contentContainer{height:auto}
+.portfolio-cloud-field{position:relative;isolation:isolate;overflow:hidden;padding:30px 0 70px}
+.portfolio-cloud-field:before{content:'';position:absolute;z-index:-1;top:0;bottom:0;left:0;width:calc(100% + 64px);margin-left:-64px;background:url('../public/img/banner/BannerCloud.png') repeat;animation:passingClouds 4s linear infinite;pointer-events:none}
+.portfolio-intro{margin-top:0}
+.project-detail{padding:0}
+.project-detail .portfolio-cloud-field{padding:30px 24px 70px}
+@media(max-width:700px){
+ .portfolio-shell .zeal-banner{height:350px}
+ .portfolio-shell .zeal-banner #bannerLogo{transform:scale(.5);transform-origin:top left;left:4%;top:12px}
+ .portfolio-shell .zeal-banner .island{left:45%;top:85px;transform:scale(.42);transform-origin:top left}
+ .portfolio-shell .zeal-banner #clouds{top:170px;height:350px}
+ .portfolio-shell .zeal-banner #sun,.portfolio-shell .zeal-banner #moon{transform:scale(.7)}
+ .project-detail .portfolio-cloud-field{padding:20px 12px 45px}
+}
+@media(prefers-reduced-motion:reduce){
+ .portfolio-cloud-field:before,.zeal-banner *{animation:none!important}
+ .zeal-banner .night,.zeal-banner .dawn{background-image:none}
+}
