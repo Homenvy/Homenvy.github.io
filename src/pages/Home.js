@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Banner from "../components/banner/banner";
 import ChangeLog from "../components/changelog";
 
@@ -7,6 +8,7 @@ const Home = (props) => {
     return (
       <>
         <Banner />
+        <Link className="portfolio-home-link" to="/portfolio">Explore the project portfolio →</Link>
         <div className={"contentContainer"}>
           <div id="cloud" />
             <div style={{height: "0px"}}>

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 
 class NavBar extends Component {
+  state = { menuOpen: false };
 // Stateless Functional Component (shortcut sfc)
 // totalCounters not used, was used previously for shopping cart.
 // const NavBar = ({ totalCounters }) => {
@@ -32,7 +33,7 @@ class NavBar extends Component {
                     setup an Activate variable for a few areas*/}
             <Link 
               to="/" 
-              className="navbar-brand navLogo"
+              className="navbar-brand navLogo" aria-label="Project Zeal home"
               onClick={() => this.props.currentPage("Project Zeal")}
             />
 
@@ -40,7 +41,7 @@ class NavBar extends Component {
               <div className="radar-toggle">
                 <label className="switch">
                   <input
-                    type="checkbox"
+                    type="checkbox" aria-label="Toggle dark theme"
                     onClick={() => this.props.toggleTheme()}
                     id="themeButton"
                   />
@@ -49,19 +50,23 @@ class NavBar extends Component {
               </div>
             </div>
 
-            <div className="navLinkContainer">
+            <div className={'navLinkContainer site-menu' + (this.state.menuOpen ? ' is-open' : '')}
+              onKeyDown={event => { if (event.key === 'Escape') { this.setState({ menuOpen: false }); document.getElementById('site-menu-toggle').focus(); } }}
+              onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) this.setState({ menuOpen: false }); }}>
               {/* TODO: Page Selected here then when click/hover opens underneat for options 
                         Page youre on shows up, rest go in a drop down div*/}
-              <h1 className={theme} style={{fontSize: "2em", margin: "0"}}>{activePage}</h1>
-              <div className={"navLinkDrawer " + theme}>
+              <button id="site-menu-toggle" type="button" className={'site-menu-toggle ' + theme}
+                aria-expanded={this.state.menuOpen} aria-controls="site-menu-links"
+                onClick={() => this.setState(state => ({ menuOpen: !state.menuOpen }))}>{activePage} ▾</button>
+              <div id="site-menu-links" className={"navLinkDrawer " + theme} hidden={!this.state.menuOpen}>
                 <ul className="noBullet">
                     {AppRoutes.routes.map((item, i) => (
-                      (item.isEnabled) ?
+                      (item.isEnabled === "1") ?
                       <li key={item.name}>
                         <Link 
                           to={item.to}
                           className={theme}
-                          onClick={() => this.props.currentPage(item.name)}>{item.name}
+                          onClick={() => { this.props.currentPage(item.name); this.setState({ menuOpen: false }); }}>{item.name}
                         </Link>
                       </li> :
                         ""
@@ -86,22 +91,5 @@ class NavBar extends Component {
   };
 };
 
-// use SFC over class in situations like the nav bar
-// class NavBar extends Component {
-//     render() {
-//         return (
-//             <nav className="navbar bg-light">
-//                 <div className="container-fluid">
-//                     <a className="navbar-brand" href="#">
-//                         Navbar{" "}
-//                         <span className="badge badge-pill badge-secondary">
-//                             {this.props.totalCounters}
-//                         </span>
-//                     </a>
-//                 </div>
-//             </nav>
-//         );
-//     }
-// }
 
 export default NavBar;
